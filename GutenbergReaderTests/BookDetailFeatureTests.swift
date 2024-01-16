@@ -1,18 +1,17 @@
 //
-//  CategoryListFeatureTests.swift
+//  BookInfoTests.swift
 //  GutenbergReaderTests
 //
-//  Created by Fikret Onur ÖZDİL on 15.01.2024.
+//  Created by Fikret Onur ÖZDİL on 16.01.2024.
 //
 
-@testable import GutenbergReader
 import XCTest
+@testable import GutenbergReader
 import ComposableArchitecture
 
-
 @MainActor
-final class BooksListFeatureTests: XCTestCase {
-    var books: Books? {
+final class BookDetailFeatureTests: XCTestCase {
+    var book: Book {
         let jsonData = """
         {
             "count": 72624,
@@ -63,31 +62,57 @@ final class BooksListFeatureTests: XCTestCase {
         }
         """.data(using: .utf8)!
         let books = try? JSONDecoder().decode(Books.self, from: jsonData)
-        return books
+        return books!.results[0]
     }
 
-    func testCategoriesListed() async {
-        let store = TestStore(initialState: BooksListFeature.State()) {
-            BooksListFeature()
+    var success = false
+
+    func testReadButtonTapped() async {
+        let store = TestStore(initialState: BookDetailFeature.State(book: book)) {
+            BookDetailFeature()
         } withDependencies: {
-            $0.bookList.fetch = { self.books! }
+            $0.bookDetail.download = { _ in
+                return Data()
+            }
         }
 
-        await store.send(.onAppear) {
-            $0.isLoading = true
+        await store.send(.readButtonTapped) { state in
+            state.isDownloadingForRead = true
         }
 
-        await store.receive(\.booksListedResponse) { state in
-            state.books = self.books!.results
-            state.isLoading = false
+        await store.receive(\.downloadResponse) { state in
+            state.isDownloadingForRead = false
+            state.downloadSucceed = true
+            state.bookContent = Data()
         }
     }
 
-    func testNavigateBookInfoView() async {
-        let store = TestStore(initialState: BooksListFeature.State()) {
-            BooksListFeature()
+    func testDownloadButtonTapped() async {
+        let store = TestStore(initialState: BookDetailFeature.State(book: book)) {
+            BookDetailFeature()
         } withDependencies: {
-            $0.bookList.fetch = { self.books! }
+            $0.bookDetail.downloadAndSave = { _ in
+                return Data()
+            }
+        }
+
+        await store.send(.downloadButtonTapped) { state in
+        state.isDownloading = true
+        }
+
+        await store.receive(\.downloadAndSaveResponse) { state in
+            state.isDownloading = false
+            state.bookContent = Data()
+        }
+    }
+
+    func testBookmarkBookTapped() async {
+        let store = TestStore(initialState: BookDetailFeature.State(book: book)) {
+            BookDetailFeature()
+        }
+
+        await store.send(.bookmarkButtonTapped) { state in
+            state.isBookmarked = true
         }
     }
 }

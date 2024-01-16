@@ -23,7 +23,7 @@ extension BooksListClient: DependencyKey {
 
 extension DependencyValues {
     var bookList: BooksListClient {
-        get { self[BooksListClient.self]}
+        get { self[BooksListClient.self] }
         set { self[BooksListClient.self] = newValue }
     }
 }

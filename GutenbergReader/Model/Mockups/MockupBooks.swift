@@ -1,18 +1,14 @@
 //
-//  CategoryListFeatureTests.swift
-//  GutenbergReaderTests
+//  MockupBook.swift
+//  GutenbergReader
 //
-//  Created by Fikret Onur ÖZDİL on 15.01.2024.
+//  Created by Fikret Onur ÖZDİL on 16.01.2024.
 //
 
-@testable import GutenbergReader
-import XCTest
-import ComposableArchitecture
+import Foundation
 
-
-@MainActor
-final class BooksListFeatureTests: XCTestCase {
-    var books: Books? {
+class MockupBooks {
+    static var books: Books? {
         let jsonData = """
         {
             "count": 72624,
@@ -64,30 +60,5 @@ final class BooksListFeatureTests: XCTestCase {
         """.data(using: .utf8)!
         let books = try? JSONDecoder().decode(Books.self, from: jsonData)
         return books
-    }
-
-    func testCategoriesListed() async {
-        let store = TestStore(initialState: BooksListFeature.State()) {
-            BooksListFeature()
-        } withDependencies: {
-            $0.bookList.fetch = { self.books! }
-        }
-
-        await store.send(.onAppear) {
-            $0.isLoading = true
-        }
-
-        await store.receive(\.booksListedResponse) { state in
-            state.books = self.books!.results
-            state.isLoading = false
-        }
-    }
-
-    func testNavigateBookInfoView() async {
-        let store = TestStore(initialState: BooksListFeature.State()) {
-            BooksListFeature()
-        } withDependencies: {
-            $0.bookList.fetch = { self.books! }
-        }
     }
 }

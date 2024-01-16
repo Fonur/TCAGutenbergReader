@@ -14,13 +14,15 @@ struct BooksListFeature {
     struct State: Equatable {
         var isLoading: Bool = false
         var books: [Book] = []
+        var path = StackState<BookDetailFeature.State>()
     }
-    
+
     enum Action {
         case onAppear
         case booksListedResponse(Books)
+        case path(StackAction<BookDetailFeature.State, BookDetailFeature.Action>)
     }
-    
+
     @Dependency(\.bookList) var booksList
 
     var body: some ReducerOf<Self> {
@@ -35,7 +37,12 @@ struct BooksListFeature {
                 state.books = books.results
                 state.isLoading = false
                 return .none
+            case .path(_):
+                return .none
             }
+        }
+        .forEach(\.path, action: \.path) {
+            BookDetailFeature()
         }
     }
 }
