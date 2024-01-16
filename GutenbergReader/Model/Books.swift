@@ -30,9 +30,9 @@ struct Book: Equatable, Codable {
     var title: String
     var authors, translators: [Author]
     var subjects, bookshelves: [String]
-    var languages: [Language]
+    var languages: [String]
     var copyright: Bool
-    var mediaType: MediaType
+    var mediaType: String
     var formats: Formats
     var downloadCount: Int
 
@@ -86,9 +86,7 @@ enum Language: String, Codable {
     case en = "en"
 }
 
-enum MediaType: String, Codable {
-    case text = "Text"
-}
+
 
 // MARK: - Encode/decode helpers
 

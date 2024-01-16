@@ -64,9 +64,9 @@ final class BookDetailFeatureTests: XCTestCase {
         let books = try? JSONDecoder().decode(Books.self, from: jsonData)
         return books!.results[0]
     }
-
+    
     var success = false
-
+    
     func testReadButtonTapped() async {
         let store = TestStore(initialState: BookDetailFeature.State(book: book)) {
             BookDetailFeature()
@@ -75,44 +75,48 @@ final class BookDetailFeatureTests: XCTestCase {
                 return Data()
             }
         }
-
+        
         await store.send(.readButtonTapped) { state in
             state.isDownloadingForRead = true
         }
-
+        
         await store.receive(\.downloadResponse) { state in
             state.isDownloadingForRead = false
             state.downloadSucceed = true
             state.bookContent = Data()
         }
     }
-
+    
     func testDownloadButtonTapped() async {
         let store = TestStore(initialState: BookDetailFeature.State(book: book)) {
             BookDetailFeature()
         } withDependencies: {
-            $0.bookDetail.downloadAndSave = { _ in
+            $0.bookDetail.downloadAndSave = { _, _ in
                 return Data()
             }
         }
-
+        
         await store.send(.downloadButtonTapped) { state in
-        state.isDownloading = true
+            state.isDownloading = true
         }
-
+        
         await store.receive(\.downloadAndSaveResponse) { state in
             state.isDownloading = false
             state.bookContent = Data()
         }
     }
-
+    
     func testBookmarkBookTapped() async {
         let store = TestStore(initialState: BookDetailFeature.State(book: book)) {
             BookDetailFeature()
         }
-
+        
         await store.send(.bookmarkButtonTapped) { state in
             state.isBookmarked = true
+        }
+        
+        await store.send(.bookmarkButtonTapped) { state in
+            state.isBookmarked = false
         }
     }
 }

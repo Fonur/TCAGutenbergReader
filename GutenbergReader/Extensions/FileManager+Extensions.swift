@@ -8,8 +8,7 @@
 import Foundation
 
 extension FileManager {
-    func save(data: Data, title: String) throws {
-        let url = URL.documentsDirectory.appending(path: "\(title).txt")
+    func save(data: Data, url: URL) throws {
         do {
             try data.write(to: url)
         } catch {

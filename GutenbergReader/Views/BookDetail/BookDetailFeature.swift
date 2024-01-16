@@ -55,11 +55,12 @@ struct BookDetailFeature {
             case .downloadButtonTapped:
                 state.isDownloading = true
                 let url = state.book.formats.textPlainCharsetUsASCII
+                let title = state.book.title
                 return .run { send in
-                    try await send(.downloadAndSaveResponse(bookDetail.downloadAndSave(url)))
+                    try await send(.downloadAndSaveResponse(bookDetail.downloadAndSave(url, title)))
                 }
             case .bookmarkButtonTapped:
-                state.isBookmarked = true
+                state.isBookmarked.toggle()
                 return .none
             }
         }

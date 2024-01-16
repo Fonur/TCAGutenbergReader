@@ -13,11 +13,128 @@ struct BookDetailView: View {
 
     var body: some View {
         WithViewStore(self.store) { $0 } content: { viewStore in
-            VStack {
-                
-            }
-            .navigationTitle(Text("\(viewStore.book.title)"))
-            .navigationBarTitleDisplayMode(.large)
+            VStack(alignment: .leading, content: {
+                Text("\(viewStore.book.title)").font(.largeTitle)
+                HStack(spacing:3, content: {
+                    Text("by")
+                    ForEach(viewStore.book.authors, id:\.name) { author in
+                        Text("\(author.name) ")
+                    }
+                })
+                .font(.callout)
+                .foregroundStyle(.gray)
+                HStack(content: {
+                    Spacer()
+                    //viewStore.state.book.formats.imageJPEG
+                    AsyncImage(url: URL(string: "")) { image in
+                        image
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 300)
+                    } placeholder: {
+                        ProgressView()
+                            .frame(height: 300)
+                    }
+                    Spacer()
+                })
+                Divider()
+                HStack(alignment: .top, spacing: 5, content: {
+                    ForEach(viewStore.book.bookshelves, id:\.self) { subject in
+                        Text(subject)
+                            .lineLimit(2)
+                            .font(.caption)
+                            .padding()
+                            .background {
+                                RoundedRectangle(cornerRadius: 25.0)
+                                    .fill(.gray.opacity(0.7))
+                                    .frame(height: 35)
+                            }
+                    }
+                })
+                VStack(alignment: .leading, spacing: 3) {
+                    Text("About")
+                        .font(.title)
+                        .fontWeight(.semibold)
+                        .padding(.top)
+
+                    HStack {
+                        Label("Languages:", systemImage: "globe")
+                        ForEach(viewStore.book.languages, id:\.self) { language in
+                            Text("\"\(language)\" ")
+                        }
+                    }
+                    HStack {
+                        Label("Download Count:", systemImage: "number")
+                        Text("\(viewStore.book.downloadCount)")
+                    }
+                    HStack {
+                        Label("Media Type:", systemImage: "doc")
+                        Text("\"\(viewStore.book.mediaType)\"")
+                    }
+                    HStack {
+                        Label {
+                            Text("Copyright:")
+                        } icon: {
+                            Text("©")
+                        }
+
+                        Text(viewStore.book.copyright ? "true" : "false")
+                    }
+                }
+                .font(.caption)
+
+                Spacer()
+
+                HStack(alignment:.center) {
+                    Button {
+                        viewStore.send(.readButtonTapped)
+                    } label: {
+                        HStack {
+                            Text("Read")
+                            Image(systemName: "book")
+                        }
+                        .font(.title3)
+                            .background {
+                                RoundedRectangle(cornerRadius: 15.0)
+                                    .stroke()
+                                    .frame(width: 150, height: 40, alignment: .center)
+                            }
+                    }
+                    Spacer()
+                    Button {
+                        viewStore.send(.downloadButtonTapped)
+                    } label: {
+                        HStack {
+                            Text("Download")
+                            Image(systemName: "arrow.down.circle.dotted")
+                                .symbolEffect(.variableColor.iterative, options: .repeating.speed(0.05), value: viewStore.isDownloading)
+                        }
+                        .font(.title3)
+                        .background {
+                            RoundedRectangle(cornerRadius: 15.0)
+                                .stroke()
+                                .frame(width: 150, height: 40, alignment: .center)
+                        }
+                    }
+                    .disabled(viewStore.isDownloading)
+                }
+                .padding(.horizontal, 40)
+            })
+            .padding(10)
+            .toolbar(content: {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Group {
+                        if viewStore.isBookmarked {
+                            Image(systemName: "bookmark.fill")
+                        } else {
+                            Image(systemName: "bookmark")
+                        }
+                    }
+                    .onTapGesture(perform: {
+                        viewStore.send(.bookmarkButtonTapped)
+                    })
+                }
+            })
         }
     }
 }
