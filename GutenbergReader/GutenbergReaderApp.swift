@@ -6,12 +6,17 @@
 //
 
 import SwiftUI
-
+import ComposableArchitecture
 @main
 struct GutenbergReaderApp: App {
+    static let store = Store(initialState: BooksListFeature.State()) {
+        BooksListFeature()
+            ._printChanges()
+    }
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            BooksListView(store: GutenbergReaderApp.store)
         }
     }
 }
