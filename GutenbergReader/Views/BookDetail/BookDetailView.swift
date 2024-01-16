@@ -106,8 +106,10 @@ struct BookDetailView: View {
                     } label: {
                         HStack {
                             Text("Download")
-                            Image(systemName: "arrow.down.circle.dotted")
-                                .symbolEffect(.variableColor.iterative, options: .repeating.speed(0.05), value: viewStore.isDownloading)
+                            viewStore.isDownloading ?
+                            AnyView(Image(systemName: "arrow.down.circle.dotted")
+                                .symbolEffect(.variableColor.iterative, options: .repeating.speed(0.05)))
+                            : AnyView(Image(systemName: "arrow.down.circle.dotted"))
                         }
                         .font(.title3)
                         .background {
@@ -120,6 +122,7 @@ struct BookDetailView: View {
                 }
                 .padding(.horizontal, 40)
             })
+            .alert(store: self.store.scope(state: \.$alert, action: \.alert))
             .padding(10)
             .toolbar(content: {
                 ToolbarItem(placement: .topBarTrailing) {

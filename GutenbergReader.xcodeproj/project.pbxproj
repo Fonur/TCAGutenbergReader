@@ -24,6 +24,7 @@
 		49D4D8742B566ACB003BA161 /* BookDetailFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D4D8732B566ACB003BA161 /* BookDetailFeature.swift */; };
 		49D4D8762B566B26003BA161 /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D4D8752B566B26003BA161 /* BookDetailView.swift */; };
 		49D4D8792B566BE5003BA161 /* MockupBooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D4D8782B566BE5003BA161 /* MockupBooks.swift */; };
+		49ED963E2B57137F0064736F /* AlertState+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED963D2B57137F0064736F /* AlertState+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		49D4D8732B566ACB003BA161 /* BookDetailFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailFeature.swift; sourceTree = "<group>"; };
 		49D4D8752B566B26003BA161 /* BookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
 		49D4D8782B566BE5003BA161 /* MockupBooks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockupBooks.swift; sourceTree = "<group>"; };
+		49ED963D2B57137F0064736F /* AlertState+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertState+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				49C016292B56B76C00090C31 /* FileManager+Extensions.swift */,
+				49ED963D2B57137F0064736F /* AlertState+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				49C016272B56A91700090C31 /* BookDetailClient.swift in Sources */,
 				49916DA42B55C13E00DF5C0A /* BooksListView.swift in Sources */,
 				49C016252B56A7D700090C31 /* DownloadManager.swift in Sources */,
+				49ED963E2B57137F0064736F /* AlertState+Extensions.swift in Sources */,
 				49D4D8762B566B26003BA161 /* BookDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

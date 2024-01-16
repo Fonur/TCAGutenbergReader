@@ -82,7 +82,6 @@ final class BookDetailFeatureTests: XCTestCase {
         
         await store.receive(\.downloadResponse) { state in
             state.isDownloadingForRead = false
-            state.downloadSucceed = true
             state.bookContent = Data()
         }
     }
@@ -103,6 +102,7 @@ final class BookDetailFeatureTests: XCTestCase {
         await store.receive(\.downloadAndSaveResponse) { state in
             state.isDownloading = false
             state.bookContent = Data()
+            state.alert = .downloadMessage()
         }
     }
     
