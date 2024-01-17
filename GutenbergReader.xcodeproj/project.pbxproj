@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49071ADF2B57E30900CA3F35 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49071ADE2B57E30900CA3F35 /* WebView.swift */; };
 		494B59402B5571B700C170F3 /* GutenbergReaderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494B593F2B5571B700C170F3 /* GutenbergReaderApp.swift */; };
 		494B59442B5571B800C170F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 494B59432B5571B800C170F3 /* Assets.xcassets */; };
 		494B59472B5571B800C170F3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 494B59462B5571B800C170F3 /* Preview Assets.xcassets */; };
@@ -25,6 +26,9 @@
 		49D4D8762B566B26003BA161 /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D4D8752B566B26003BA161 /* BookDetailView.swift */; };
 		49D4D8792B566BE5003BA161 /* MockupBooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D4D8782B566BE5003BA161 /* MockupBooks.swift */; };
 		49ED963E2B57137F0064736F /* AlertState+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED963D2B57137F0064736F /* AlertState+Extensions.swift */; };
+		49ED96412B5721E10064736F /* BookReaderFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED96402B5721E10064736F /* BookReaderFeature.swift */; };
+		49ED96432B5721EE0064736F /* BookReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED96422B5721EE0064736F /* BookReaderView.swift */; };
+		49ED96452B5722490064736F /* BookReaderFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED96442B5722490064736F /* BookReaderFeatureTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		49071ADE2B57E30900CA3F35 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		494B593C2B5571B700C170F3 /* GutenbergReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GutenbergReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		494B593F2B5571B700C170F3 /* GutenbergReaderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GutenbergReaderApp.swift; sourceTree = "<group>"; };
 		494B59432B5571B800C170F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,6 +64,9 @@
 		49D4D8752B566B26003BA161 /* BookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
 		49D4D8782B566BE5003BA161 /* MockupBooks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockupBooks.swift; sourceTree = "<group>"; };
 		49ED963D2B57137F0064736F /* AlertState+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertState+Extensions.swift"; sourceTree = "<group>"; };
+		49ED96402B5721E10064736F /* BookReaderFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReaderFeature.swift; sourceTree = "<group>"; };
+		49ED96422B5721EE0064736F /* BookReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReaderView.swift; sourceTree = "<group>"; };
+		49ED96442B5722490064736F /* BookReaderFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReaderFeatureTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49071ADD2B57E2FB00CA3F35 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				49071ADE2B57E30900CA3F35 /* WebView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		494B59332B5571B700C170F3 = {
 			isa = PBXGroup;
 			children = (
@@ -101,10 +117,11 @@
 		494B593E2B5571B700C170F3 /* GutenbergReader */ = {
 			isa = PBXGroup;
 			children = (
+				49071ADD2B57E2FB00CA3F35 /* Views */,
 				4968EDAF2B56FA2B00FBD3D3 /* Info.plist */,
 				49C016282B56B65900090C31 /* Extensions */,
 				49C016232B56A7CD00090C31 /* Helpers */,
-				49916DA22B55C13100DF5C0A /* Views */,
+				49916DA22B55C13100DF5C0A /* Features */,
 				49916D9B2B557E7200DF5C0A /* Model */,
 				494B59652B557A7500C170F3 /* Environment */,
 				494B593F2B5571B700C170F3 /* GutenbergReaderApp.swift */,
@@ -129,6 +146,7 @@
 				494B595A2B55749500C170F3 /* GutenbergReaderTests.swift */,
 				494B59612B5576F100C170F3 /* BooksListFeatureTests.swift */,
 				49D4D8712B566252003BA161 /* BookDetailFeatureTests.swift */,
+				49ED96442B5722490064736F /* BookReaderFeatureTests.swift */,
 			);
 			path = GutenbergReaderTests;
 			sourceTree = "<group>";
@@ -151,13 +169,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		49916DA22B55C13100DF5C0A /* Views */ = {
+		49916DA22B55C13100DF5C0A /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				49ED963F2B5721CA0064736F /* BookReader */,
 				49BC78152B569A800035D7EF /* BookDetail */,
 				49BC78142B569A790035D7EF /* BookList */,
 			);
-			path = Views;
+			path = Features;
 			sourceTree = "<group>";
 		};
 		49BC78142B569A790035D7EF /* BookList */ = {
@@ -201,6 +220,15 @@
 				49D4D8782B566BE5003BA161 /* MockupBooks.swift */,
 			);
 			path = Mockups;
+			sourceTree = "<group>";
+		};
+		49ED963F2B5721CA0064736F /* BookReader */ = {
+			isa = PBXGroup;
+			children = (
+				49ED96402B5721E10064736F /* BookReaderFeature.swift */,
+				49ED96422B5721EE0064736F /* BookReaderView.swift */,
+			);
+			path = BookReader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,10 +337,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49ED96432B5721EE0064736F /* BookReaderView.swift in Sources */,
 				494B59642B55795400C170F3 /* BooksListFeature.swift in Sources */,
 				494B59672B557A8800C170F3 /* BooksListClient.swift in Sources */,
 				49D4D8742B566ACB003BA161 /* BookDetailFeature.swift in Sources */,
+				49ED96412B5721E10064736F /* BookReaderFeature.swift in Sources */,
 				49C0162A2B56B76C00090C31 /* FileManager+Extensions.swift in Sources */,
+				49071ADF2B57E30900CA3F35 /* WebView.swift in Sources */,
 				494B59402B5571B700C170F3 /* GutenbergReaderApp.swift in Sources */,
 				49916D9A2B557E6C00DF5C0A /* Books.swift in Sources */,
 				49D4D8792B566BE5003BA161 /* MockupBooks.swift in Sources */,
@@ -328,6 +359,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49ED96452B5722490064736F /* BookReaderFeatureTests.swift in Sources */,
 				494B59622B5576F100C170F3 /* BooksListFeatureTests.swift in Sources */,
 				49D4D8722B566252003BA161 /* BookDetailFeatureTests.swift in Sources */,
 				494B595B2B55749500C170F3 /* GutenbergReaderTests.swift in Sources */,

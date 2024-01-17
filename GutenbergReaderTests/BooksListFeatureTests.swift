@@ -73,9 +73,7 @@ final class BooksListFeatureTests: XCTestCase {
             $0.bookList.fetch = { self.books! }
         }
 
-        await store.send(.onAppear) {
-            $0.isLoading = true
-        }
+        await store.send(.onAppear)
 
         await store.receive(\.booksListedResponse) { state in
             state.books = self.books!.results

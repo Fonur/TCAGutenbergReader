@@ -75,17 +75,15 @@ final class BookDetailFeatureTests: XCTestCase {
                 return Data()
             }
         }
-        
-        await store.send(.readButtonTapped) { state in
-            state.isDownloadingForRead = true
-        }
-        
-        await store.receive(\.downloadResponse) { state in
-            state.isDownloadingForRead = false
-            state.bookContent = Data()
+
+        await store.send(.readButtonTapped)
+
+        await store.receive(\.download) { state in
+            state.bookReader = BookReaderFeature.State(bookContent: Data())
         }
     }
-    
+
+
     func testDownloadButtonTapped() async {
         let store = TestStore(initialState: BookDetailFeature.State(book: book)) {
             BookDetailFeature()

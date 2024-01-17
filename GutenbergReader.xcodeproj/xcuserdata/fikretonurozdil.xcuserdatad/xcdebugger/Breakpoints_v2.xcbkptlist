@@ -7,17 +7,94 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B6838B0E-871C-4E8C-89C1-16AC86EB654D"
-            shouldBeEnabled = "Yes"
+            uuid = "D96F20EC-B78A-4151-94D7-2371429EFFA9"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GutenbergReader/Model/Mockups/MockupBooks.swift"
+            filePath = "GutenbergReader/Views/BookList/BooksListView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "books"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "body"
             landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "D96F20EC-B78A-4151-94D7-2371429EFFA9 - aa5c9bf86f84fa13"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (ComposableArchitecture.ViewStore&lt;GutenbergReader.BooksListFeature.State, GutenbergReader.BooksListFeature.Action&gt;) -&gt; &lt;&lt;opaque return type of SwiftUI.View.task(priority: Swift.TaskPriority, _: @Sendable () async -&gt; ()) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; ComposableArchitecture.WithViewStore&lt;GutenbergReader.BooksListFeature.State, GutenbergReader.BooksListFeature.Action, &lt;&lt;opaque return type of SwiftUI.View.task(priority: Swift.TaskPriority, _: @Sendable () async -&gt; ()) -&gt; some&gt;&gt;.0&gt; in GutenbergReader.BooksListView.body.getter : some"
+                  moduleName = "GutenbergReader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fikretonurozdil/Documents/GitHub/GutenbergReader/GutenbergReader/Views/BookList/BooksListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "400">
+               </Location>
+               <Location
+                  uuid = "D96F20EC-B78A-4151-94D7-2371429EFFA9 - bd0110d6b420477b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Sendable () async -&gt; () in closure #2 (ComposableArchitecture.ViewStore&lt;GutenbergReader.BooksListFeature.State, GutenbergReader.BooksListFeature.Action&gt;) -&gt; &lt;&lt;opaque return type of SwiftUI.View.task(priority: Swift.TaskPriority, _: @Sendable () async -&gt; ()) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; ComposableArchitecture.WithViewStore&lt;GutenbergReader.BooksListFeature.State, GutenbergReader.BooksListFeature.Action, &lt;&lt;opaque return type of SwiftUI.View.task(priority: Swift.TaskPriority, _: @Sendable () async -&gt; ()) -&gt; some&gt;&gt;.0&gt; in GutenbergReader.BooksListView.body.getter : some"
+                  moduleName = "GutenbergReader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fikretonurozdil/Documents/GitHub/GutenbergReader/GutenbergReader/Views/BookList/BooksListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "D96F20EC-B78A-4151-94D7-2371429EFFA9 - 1b82f1867a8bc338"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #2 @Sendable () async -&gt; () in closure #2 (ComposableArchitecture.ViewStore&lt;GutenbergReader.BooksListFeature.State, GutenbergReader.BooksListFeature.Action&gt;) -&gt; &lt;&lt;opaque return type of SwiftUI.View.task(priority: Swift.TaskPriority, _: @Sendable () async -&gt; ()) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; ComposableArchitecture.WithViewStore&lt;GutenbergReader.BooksListFeature.State, GutenbergReader.BooksListFeature.Action, &lt;&lt;opaque return type of SwiftUI.View.task(priority: Swift.TaskPriority, _: @Sendable () async -&gt; ()) -&gt; some&gt;&gt;.0&gt; in GutenbergReader.BooksListView.body.getter : some"
+                  moduleName = "GutenbergReader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fikretonurozdil/Documents/GitHub/GutenbergReader/GutenbergReader/Views/BookList/BooksListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "D96F20EC-B78A-4151-94D7-2371429EFFA9 - e5fbf012c620dec7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (ComposableArchitecture.ViewStore&lt;GutenbergReader.BooksListFeature.State, GutenbergReader.BooksListFeature.Action&gt;) -&gt; &lt;&lt;opaque return type of SwiftUI.View.onAppear(perform: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; ComposableArchitecture.WithViewStore&lt;GutenbergReader.BooksListFeature.State, GutenbergReader.BooksListFeature.Action, &lt;&lt;opaque return type of SwiftUI.View.onAppear(perform: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; some&gt;&gt;.0&gt; in GutenbergReader.BooksListView.body.getter : some"
+                  moduleName = "GutenbergReader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fikretonurozdil/Documents/GitHub/GutenbergReader/GutenbergReader/Views/BookList/BooksListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "300">
+               </Location>
+               <Location
+                  uuid = "D96F20EC-B78A-4151-94D7-2371429EFFA9 - 612b493472e5d2ab"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in closure #2 (ComposableArchitecture.ViewStore&lt;GutenbergReader.BooksListFeature.State, GutenbergReader.BooksListFeature.Action&gt;) -&gt; &lt;&lt;opaque return type of SwiftUI.View.onAppear(perform: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; ComposableArchitecture.WithViewStore&lt;GutenbergReader.BooksListFeature.State, GutenbergReader.BooksListFeature.Action, &lt;&lt;opaque return type of SwiftUI.View.onAppear(perform: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; some&gt;&gt;.0&gt; in GutenbergReader.BooksListView.body.getter : some"
+                  moduleName = "GutenbergReader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fikretonurozdil/Documents/GitHub/GutenbergReader/GutenbergReader/Views/BookList/BooksListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

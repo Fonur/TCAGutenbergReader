@@ -18,6 +18,7 @@ struct BooksListView: View {
                     if viewStore.state.isLoading {
                         ProgressView()
                             .font(.largeTitle)
+                            .onAppear { viewStore.send(.onAppear) }
                     } else {
                         List(viewStore.state.books, id: \.id) { book in
                             NavigationLink(state: BookDetailFeature.State(book: book)) {
@@ -26,7 +27,6 @@ struct BooksListView: View {
                         }
                     }
                 })
-                .task { viewStore.send(.onAppear) }
             }
         } destination: { store in
             BookDetailView(store: store)

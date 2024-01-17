@@ -13,23 +13,24 @@ import SwiftUI
 struct BookDetailFeature {
     struct State: Equatable {
         @PresentationState var alert: AlertState<Action.Alert>?
+        @PresentationState var bookReader: BookReaderFeature.State?
         let book: Book
         var bookContent: Data?
+        var readContentURL: String?
         var isBookmarked = false
         var isDownloading = false
-        var isDownloadingForRead = false
+        var isReadyToRead = false
     }
 
     enum Action {
         case alert(PresentationAction<Alert>)
         case bookmarkButtonTapped
         case downloadAndSaveResponse(Data?)
+        case download(Data?)
         case downloadButtonTapped
-        case downloadResponse(Data?)
         case readButtonTapped
-        enum Alert: Equatable {
-            case downloadMessage
-        }
+        case bookReader(PresentationAction<BookReaderFeature.Action>)
+        enum Alert: Equatable { case downloadMessage }
     }
 
     @Dependency(\.bookDetail) var bookDetail
@@ -44,10 +45,10 @@ struct BookDetailFeature {
             case .bookmarkButtonTapped:
                 state.isBookmarked.toggle()
                 return .none
-            case let .downloadResponse(data):
-                state.isDownloadingForRead = false
+
+            case let .download(data):
                 if let data {
-                    state.bookContent = data
+                    state.bookReader = BookReaderFeature.State(bookContent: data)
                 }
                 return .none
             case let .downloadAndSaveResponse(data):
@@ -65,12 +66,16 @@ struct BookDetailFeature {
                     try await send(.downloadAndSaveResponse(bookDetail.downloadAndSave(url, title)))
                 }
             case .readButtonTapped:
-                state.isDownloadingForRead = true
                 let url = state.book.formats.textPlainCharsetUsASCII
                 return .run { send in
-                    try await send(.downloadResponse(bookDetail.download(url)))
+                    try await send(.download(bookDetail.download(url)))
                 }
+            case .bookReader(_):
+                return .none
             }
+        }
+        .ifLet(\.$bookReader, action: \.bookReader) {
+            BookReaderFeature()
         }
     }
 }

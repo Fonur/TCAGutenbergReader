@@ -25,8 +25,7 @@ struct BookDetailView: View {
                 .foregroundStyle(.gray)
                 HStack(content: {
                     Spacer()
-                    //viewStore.state.book.formats.imageJPEG
-                    AsyncImage(url: URL(string: "")) { image in
+                    AsyncImage(url: URL(string: viewStore.state.book.formats.imageJPEG)) { image in
                         image
                             .resizable()
                             .scaledToFit()
@@ -81,10 +80,7 @@ struct BookDetailView: View {
                         Text(viewStore.book.copyright ? "true" : "false")
                     }
                 }
-                .font(.caption)
-
                 Spacer()
-
                 HStack(alignment:.center) {
                     Button {
                         viewStore.send(.readButtonTapped)
@@ -94,11 +90,11 @@ struct BookDetailView: View {
                             Image(systemName: "book")
                         }
                         .font(.title3)
-                            .background {
-                                RoundedRectangle(cornerRadius: 15.0)
-                                    .stroke()
-                                    .frame(width: 150, height: 40, alignment: .center)
-                            }
+                        .background {
+                            RoundedRectangle(cornerRadius: 15.0)
+                                .stroke()
+                                .frame(width: 150, height: 40, alignment: .center)
+                        }
                     }
                     Spacer()
                     Button {
@@ -137,6 +133,9 @@ struct BookDetailView: View {
                         viewStore.send(.bookmarkButtonTapped)
                     })
                 }
+            })
+            .navigationDestination(store: self.store.scope(state: \.$bookReader, action: \.bookReader), destination: { store in
+                BookReaderView(store: store)
             })
         }
     }

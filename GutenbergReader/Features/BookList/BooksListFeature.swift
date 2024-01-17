@@ -12,7 +12,7 @@ import SwiftUI
 @Reducer
 struct BooksListFeature {
     struct State: Equatable {
-        var isLoading: Bool = false
+        var isLoading: Bool = true
         var books: [Book] = []
         var path = StackState<BookDetailFeature.State>()
     }
@@ -29,7 +29,6 @@ struct BooksListFeature {
         Reduce { state, action in
             switch action {
             case .onAppear:
-                state.isLoading = true
                 return .run { send in
                     try await send(.booksListedResponse(self.booksList.fetch()))
                 }
