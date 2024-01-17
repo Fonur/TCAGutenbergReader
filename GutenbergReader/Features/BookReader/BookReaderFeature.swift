@@ -14,10 +14,15 @@ struct BookReaderFeature {
     struct State: Equatable {
         let bookContent: Data
         var text: String = ""
+        var showingText: String = ""
+        var page = 0
     }
 
     enum Action {
         case loadText
+        case forwardButtonTapped
+        case backwardButtonTapped
+        case showText(from: Int, to: Int)
     }
 
     var body: some ReducerOf<Self> {
@@ -25,6 +30,26 @@ struct BookReaderFeature {
             switch action {
             case .loadText:
                 state.text = String(data: state.bookContent, encoding: .utf8)!
+                let page = state.page
+                return .run { send in
+                    await send(.showText(from: page * 30, to: page * 30 + 30))
+                }
+            case .forwardButtonTapped:
+                state.page += 1
+                let page = state.page
+                return .run { send in
+                    await send(.showText(from: page * 30, to: page * 30 + 30))
+                }
+            case .backwardButtonTapped:
+                if state.page > 0 {
+                    state.page -= 1
+                }
+                let page = state.page
+                return .run { send in
+                    await send(.showText(from: page * 30, to: page * 30 + 30))
+                }
+            case .showText(from: let from, to: let to):
+                state.showingText = state.text.lineRange(from: from, to: to)
                 return .none
             }
         }

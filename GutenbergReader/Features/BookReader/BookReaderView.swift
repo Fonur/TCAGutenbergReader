@@ -12,11 +12,27 @@ struct BookReaderView: View {
     let store: StoreOf<BookReaderFeature>
     var body: some View {
         WithViewStore(self.store) { $0 } content: { viewStore in
-            Text(viewStore.text)
-                .lineLimit(nil)
-                .onAppear {
-                    viewStore.send(.loadText)
+            ScrollView {
+                Text(viewStore.showingText)
+                    .lineLimit(nil)
+                    .onAppear {
+                        viewStore.send(.loadText)
+                    }
+            }
+            .toolbar(content: {
+                ToolbarItem(placement: .bottomBar) {
+                    HStack(content: {
+                        Button("", systemImage: "chevron.backward") {
+                            viewStore.send(.backwardButtonTapped)
+                        }
+                        Spacer()
+                        Button("", systemImage: "chevron.forward") {
+                            viewStore.send(.forwardButtonTapped)
+                        }
+                    })
                 }
+            })
+            .padding()
         }
     }
 }

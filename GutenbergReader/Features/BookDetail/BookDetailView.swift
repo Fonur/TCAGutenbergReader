@@ -83,7 +83,7 @@ struct BookDetailView: View {
                 Spacer()
                 HStack(alignment:.center) {
                     Button {
-                        viewStore.send(.readButtonTapped)
+                        viewStore.send(.setNavigation(isActive: true))
                     } label: {
                         HStack {
                             Text("Read")
@@ -118,6 +118,17 @@ struct BookDetailView: View {
                 }
                 .padding(.horizontal, 40)
             })
+            .navigationDestination(isPresented: viewStore.binding(
+                get: \.isSettingForReady,
+                send: { .setNavigation(isActive: $0) }), destination: {
+                IfLetStore(
+                    self.store.scope(state: \.bookReader, action: \.bookReader)
+                ) {
+                    BookReaderView(store: $0)
+                } else: {
+                    ProgressView()
+                }
+            })
             .alert(store: self.store.scope(state: \.$alert, action: \.alert))
             .padding(10)
             .toolbar(content: {
@@ -133,9 +144,6 @@ struct BookDetailView: View {
                         viewStore.send(.bookmarkButtonTapped)
                     })
                 }
-            })
-            .navigationDestination(store: self.store.scope(state: \.$bookReader, action: \.bookReader), destination: { store in
-                BookReaderView(store: store)
             })
         }
     }

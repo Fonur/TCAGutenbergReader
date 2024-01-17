@@ -13,25 +13,27 @@ import SwiftUI
 struct BookDetailFeature {
     struct State: Equatable {
         @PresentationState var alert: AlertState<Action.Alert>?
-        @PresentationState var bookReader: BookReaderFeature.State?
+        var bookReader: BookReaderFeature.State?
         let book: Book
         var bookContent: Data?
         var readContentURL: String?
         var isBookmarked = false
         var isDownloading = false
-        var isReadyToRead = false
+        var isSettingForReady = false
     }
 
     enum Action {
         case alert(PresentationAction<Alert>)
         case bookmarkButtonTapped
+        case bookReader(BookReaderFeature.Action)
         case downloadAndSaveResponse(Data?)
         case download(Data?)
         case downloadButtonTapped
-        case readButtonTapped
-        case bookReader(PresentationAction<BookReaderFeature.Action>)
+        case setNavigation(isActive: Bool)
         enum Alert: Equatable { case downloadMessage }
     }
+
+    private enum CancelID { case load }
 
     @Dependency(\.bookDetail) var bookDetail
 
@@ -45,11 +47,8 @@ struct BookDetailFeature {
             case .bookmarkButtonTapped:
                 state.isBookmarked.toggle()
                 return .none
-
             case let .download(data):
-                if let data {
-                    state.bookReader = BookReaderFeature.State(bookContent: data)
-                }
+                state.bookReader = BookReaderFeature.State(bookContent: data!)
                 return .none
             case let .downloadAndSaveResponse(data):
                 state.isDownloading = false
@@ -65,16 +64,22 @@ struct BookDetailFeature {
                 return .run { send in
                     try await send(.downloadAndSaveResponse(bookDetail.downloadAndSave(url, title)))
                 }
-            case .readButtonTapped:
+            case .bookReader:
+                return .none
+            case .setNavigation(isActive: true):
                 let url = state.book.formats.textPlainCharsetUsASCII
+                state.isSettingForReady = true
                 return .run { send in
                     try await send(.download(bookDetail.download(url)))
                 }
-            case .bookReader(_):
-                return .none
+                .cancellable(id: CancelID.load)
+            case .setNavigation(isActive: false):
+                state.isSettingForReady = false
+                state.bookReader = nil
+                return .cancel(id: CancelID.load)
             }
         }
-        .ifLet(\.$bookReader, action: \.bookReader) {
+        .ifLet(\.bookReader, action: \.bookReader) {
             BookReaderFeature()
         }
     }
