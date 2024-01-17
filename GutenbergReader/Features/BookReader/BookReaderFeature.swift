@@ -19,9 +19,10 @@ struct BookReaderFeature {
     }
 
     enum Action {
-        case loadText
-        case forwardButtonTapped
         case backwardButtonTapped
+        case changePageNumber(Int)
+        case forwardButtonTapped
+        case loadText
         case showText(from: Int, to: Int)
     }
 
@@ -51,6 +52,15 @@ struct BookReaderFeature {
             case .showText(from: let from, to: let to):
                 state.showingText = state.text.lineRange(from: from, to: to)
                 return .none
+            case let .changePageNumber(newPageNumber):
+                if newPageNumber > 0 {
+                    state.page = newPageNumber
+                    return .run { send in
+                        await send(.showText(from: newPageNumber * 30, to: newPageNumber * 30 + 30))
+                    }
+                } else {
+                    return .none
+                }
             }
         }
     }

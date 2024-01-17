@@ -119,10 +119,10 @@
 		494B593E2B5571B700C170F3 /* GutenbergReader */ = {
 			isa = PBXGroup;
 			children = (
-				49071ADD2B57E2FB00CA3F35 /* Views */,
 				4968EDAF2B56FA2B00FBD3D3 /* Info.plist */,
 				49C016282B56B65900090C31 /* Extensions */,
-				49C016232B56A7CD00090C31 /* Helpers */,
+				49C016232B56A7CD00090C31 /* Utils */,
+				49071ADD2B57E2FB00CA3F35 /* Views */,
 				49916DA22B55C13100DF5C0A /* Features */,
 				49916D9B2B557E7200DF5C0A /* Model */,
 				494B59652B557A7500C170F3 /* Environment */,
@@ -199,12 +199,12 @@
 			path = BookDetail;
 			sourceTree = "<group>";
 		};
-		49C016232B56A7CD00090C31 /* Helpers */ = {
+		49C016232B56A7CD00090C31 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				49C016242B56A7D700090C31 /* DownloadManager.swift */,
 			);
-			path = Helpers;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		49C016282B56B65900090C31 /* Extensions */ = {

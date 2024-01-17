@@ -26,6 +26,12 @@ struct BookReaderView: View {
                             viewStore.send(.backwardButtonTapped)
                         }
                         Spacer()
+                        Text("\(viewStore.page)")
+                            .font(.headline)
+                            .onTapGesture {
+
+                            }
+                        Spacer()
                         Button("", systemImage: "chevron.forward") {
                             viewStore.send(.forwardButtonTapped)
                         }

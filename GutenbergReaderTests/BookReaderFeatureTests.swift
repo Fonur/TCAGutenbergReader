@@ -132,6 +132,40 @@ final class BookReaderFeatureTests: XCTestCase {
         }
     }
 
+    func testChangePageNumber() async {
+        let store = TestStore(initialState: BookReaderFeature.State(bookContent: data)) {
+            BookReaderFeature()
+        }
+        store.exhaustivity = .off
+
+        await store.send(.loadText) { state in
+            state.text = String(data: self.data, encoding: .utf8)!
+        }
+        
+        await store.send(.changePageNumber(3))
+
+        store.assert { state in
+            state.page = 3
+        }
+    }
+
+    func testChangePageNumber_Negative() async {
+        let store = TestStore(initialState: BookReaderFeature.State(bookContent: data)) {
+            BookReaderFeature()
+        }
+        store.exhaustivity = .off
+
+        await store.send(.loadText) { state in
+            state.text = String(data: self.data, encoding: .utf8)!
+        }
+
+        await store.send(.changePageNumber(-2))
+
+        store.assert { state in
+            state.page = 0
+        }
+    }
+
     func testBackwardButtonTapped() async {
         let store = TestStore(initialState: BookReaderFeature.State(bookContent: data, page: 1)) {
             BookReaderFeature()
