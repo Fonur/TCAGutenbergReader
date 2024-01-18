@@ -12,6 +12,15 @@ import ComposableArchitecture
 
 @MainActor
 final class BooksListFeatureTests: XCTestCase {
+    var store: TestStore<BooksListFeature.State, BooksListFeature.Action>!
+    override func setUp() async throws {
+        self.store = TestStore(initialState: BooksListFeature.State()) {
+            BooksListFeature()
+        } withDependencies: {
+            $0.bookList.fetch = { self.books! }
+        }
+    }
+
     var books: Books? {
         let jsonData = """
         {
@@ -67,25 +76,11 @@ final class BooksListFeatureTests: XCTestCase {
     }
 
     func testCategoriesListed() async {
-        let store = TestStore(initialState: BooksListFeature.State()) {
-            BooksListFeature()
-        } withDependencies: {
-            $0.bookList.fetch = { self.books! }
-        }
-
         await store.send(.onAppear)
 
         await store.receive(\.booksListedResponse) { state in
             state.books = self.books!.results
             state.isLoading = false
-        }
-    }
-
-    func testNavigateBookInfoView() async {
-        let store = TestStore(initialState: BooksListFeature.State()) {
-            BooksListFeature()
-        } withDependencies: {
-            $0.bookList.fetch = { self.books! }
         }
     }
 }
