@@ -30,6 +30,7 @@
 		49ED96412B5721E10064736F /* BookReaderFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED96402B5721E10064736F /* BookReaderFeature.swift */; };
 		49ED96432B5721EE0064736F /* BookReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED96422B5721EE0064736F /* BookReaderView.swift */; };
 		49ED96452B5722490064736F /* BookReaderFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED96442B5722490064736F /* BookReaderFeatureTests.swift */; };
+		49F10ADB2B596B4500B23CB1 /* AppStorageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F10ADA2B596B4500B23CB1 /* AppStorageClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		49ED96402B5721E10064736F /* BookReaderFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReaderFeature.swift; sourceTree = "<group>"; };
 		49ED96422B5721EE0064736F /* BookReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReaderView.swift; sourceTree = "<group>"; };
 		49ED96442B5722490064736F /* BookReaderFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReaderFeatureTests.swift; sourceTree = "<group>"; };
+		49F10ADA2B596B4500B23CB1 /* AppStorageClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorageClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 			children = (
 				494B59662B557A8800C170F3 /* BooksListClient.swift */,
 				49C016262B56A91700090C31 /* BookDetailClient.swift */,
+				49F10ADA2B596B4500B23CB1 /* AppStorageClient.swift */,
 			);
 			path = Environment;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				494B59642B55795400C170F3 /* BooksListFeature.swift in Sources */,
 				494B59672B557A8800C170F3 /* BooksListClient.swift in Sources */,
 				49D4D8742B566ACB003BA161 /* BookDetailFeature.swift in Sources */,
+				49F10ADB2B596B4500B23CB1 /* AppStorageClient.swift in Sources */,
 				499C68652B58098000FF4773 /* String+Extensions.swift in Sources */,
 				49ED96412B5721E10064736F /* BookReaderFeature.swift in Sources */,
 				49C0162A2B56B76C00090C31 /* FileManager+Extensions.swift in Sources */,
