@@ -14,10 +14,9 @@ struct BookDetailFeature {
     struct State: Equatable {
         @PresentationState var alert: AlertState<Action.Alert>?
         var bookReader: BookReaderFeature.State?
-        let book: Book
+        var book: Book
         var bookContent: Data?
         var readContentURL: String?
-        var isBookmarked = false
         var isDownloading = false
         var isSettingForReady = false
     }
@@ -46,7 +45,7 @@ struct BookDetailFeature {
             case .alert:
                 return .none
             case .bookmarkButtonTapped:
-                state.isBookmarked.toggle()
+                state.book.isBookmarked.toggle()
                 return .none
             case let .download(data):
                 state.bookReader = BookReaderFeature.State(bookContent: data!)

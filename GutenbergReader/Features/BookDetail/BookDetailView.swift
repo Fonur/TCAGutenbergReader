@@ -134,7 +134,7 @@ struct BookDetailView: View {
             .toolbar(content: {
                 ToolbarItem(placement: .topBarTrailing) {
                     Group {
-                        if viewStore.isBookmarked {
+                        if viewStore.book.isBookmarked {
                             Image(systemName: "bookmark.fill")
                         } else {
                             Image(systemName: "bookmark")

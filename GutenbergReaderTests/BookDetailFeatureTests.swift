@@ -111,11 +111,11 @@ final class BookDetailFeatureTests: XCTestCase {
     
     func testBookmarkBookTapped() async {
         await store.send(.bookmarkButtonTapped) { state in
-            state.isBookmarked = true
+            state.book.isBookmarked = true
         }
         
         await store.send(.bookmarkButtonTapped) { state in
-            state.isBookmarked = false
+            state.book.isBookmarked = false
         }
     }
 }
