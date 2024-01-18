@@ -141,11 +141,12 @@ final class BookReaderFeatureTests: XCTestCase {
         await store.send(.loadText) { state in
             state.text = String(data: self.data, encoding: .utf8)!
         }
-        
-        await store.send(.changePageNumber(3))
+        await store.send(.showPageNumberChangeAlertButtonTapped(true))
+        await store.send(.changePageNumberButtonTapped(3))
 
         store.assert { state in
             state.page = 3
+            state.showingPageNumberChangeAlert = false
         }
     }
 
@@ -158,11 +159,46 @@ final class BookReaderFeatureTests: XCTestCase {
         await store.send(.loadText) { state in
             state.text = String(data: self.data, encoding: .utf8)!
         }
-
-        await store.send(.changePageNumber(-2))
+        
+        await store.send(.showPageNumberChangeAlertButtonTapped(true))
+        await store.send(.changePageNumberButtonTapped(-2))
 
         store.assert { state in
             state.page = 0
+            state.showingPageNumberChangeAlert = true
+        }
+    }
+
+    func testChangePageNumber_Zero() async {
+        let store = TestStore(initialState: BookReaderFeature.State(bookContent: data, page: 10)) {
+            BookReaderFeature()
+        }
+        store.exhaustivity = .off
+
+        await store.send(.loadText) { state in
+            state.text = String(data: self.data, encoding: .utf8)!
+        }
+
+        await store.send(.showPageNumberChangeAlertButtonTapped(true))
+        await store.send(.changePageNumberButtonTapped(0))
+
+        store.assert { state in
+            state.page = 0
+            state.showingPageNumberChangeAlert = false
+        }
+    }
+
+    func testShowChangeNumberAlert() async {
+        let store = TestStore(initialState: BookReaderFeature.State(bookContent: data)) {
+            BookReaderFeature()
+        }
+
+        await store.send(.showPageNumberChangeAlertButtonTapped(true)) { state in
+            state.showingPageNumberChangeAlert = true
+        }
+
+        await store.send(.showPageNumberChangeAlertButtonTapped(false)) { state in
+            state.showingPageNumberChangeAlert = false
         }
     }
 

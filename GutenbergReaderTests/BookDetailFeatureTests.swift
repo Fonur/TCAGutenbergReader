@@ -11,6 +11,20 @@ import ComposableArchitecture
 
 @MainActor
 final class BookDetailFeatureTests: XCTestCase {
+    var store: TestStore<BookDetailFeature.State, BookDetailFeature.Action>!
+    override func setUp() async throws {
+        self.store = TestStore(initialState: BookDetailFeature.State(book: book)) {
+            BookDetailFeature()
+        } withDependencies: {
+            $0.bookDetail.download = { _ in
+                return Data()
+            }
+            $0.bookDetail.downloadAndSave = { _, _ in
+                return Data()
+            }
+        }
+    }
+
     var book: Book {
         let jsonData = """
         {
@@ -68,14 +82,6 @@ final class BookDetailFeatureTests: XCTestCase {
     var success = false
     
     func testReadButtonTapped() async {
-        let store = TestStore(initialState: BookDetailFeature.State(book: book)) {
-            BookDetailFeature()
-        } withDependencies: {
-            $0.bookDetail.download = { _ in
-                return Data()
-            }
-        }
-
         await store.send(.setNavigation(isActive: true)) { state in
             state.isSettingForReady = true
         }
@@ -92,14 +98,6 @@ final class BookDetailFeatureTests: XCTestCase {
 
 
     func testDownloadButtonTapped() async {
-        let store = TestStore(initialState: BookDetailFeature.State(book: book)) {
-            BookDetailFeature()
-        } withDependencies: {
-            $0.bookDetail.downloadAndSave = { _, _ in
-                return Data()
-            }
-        }
-        
         await store.send(.downloadButtonTapped) { state in
             state.isDownloading = true
         }
@@ -112,10 +110,6 @@ final class BookDetailFeatureTests: XCTestCase {
     }
     
     func testBookmarkBookTapped() async {
-        let store = TestStore(initialState: BookDetailFeature.State(book: book)) {
-            BookDetailFeature()
-        }
-        
         await store.send(.bookmarkButtonTapped) { state in
             state.isBookmarked = true
         }
