@@ -83,4 +83,35 @@ final class BooksListFeatureTests: XCTestCase {
             state.isLoading = false
         }
     }
+
+    func testNavigateBookDetailButtonTapped() async {
+        var book: Book!
+        var bookMarked: Book!
+        await store.send(.onAppear)
+
+        await store.receive(\.booksListedResponse) { state in
+            state.books = self.books!.results
+            state.isLoading = false
+            book = state.books[0]
+            bookMarked = book
+            bookMarked.isBookmarked = true
+        }
+
+        await store.receive(\.loadBookmarks) { state in
+            state.bookmarkIDs = [46]
+        }
+
+        await store.send(.selectedButtonTapped(book)) { state in
+            state.path = StackState([BookDetailFeature.State(book: bookMarked)])
+        }
+    }
+
+    func testLoadBookmarks() async {
+        store.exhaustivity = .off
+        await store.send(.onAppear)
+        await store.skipReceivedActions()
+        store.assert { state in
+            state.bookmarkIDs = [46]
+        }
+    }
 }

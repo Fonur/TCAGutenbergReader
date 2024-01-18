@@ -113,5 +113,83 @@
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D5FBAA24-E414-4B18-AE0A-9F84D5BFCE01"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GutenbergReader/Features/BookList/BooksListFeature.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61">
+            <Locations>
+               <Location
+                  uuid = "D5FBAA24-E414-4B18-AE0A-9F84D5BFCE01 - 30c4f9977db6dff6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (inout GutenbergReader.BooksListFeature.State, GutenbergReader.BooksListFeature.Action) -&gt; ComposableArchitecture.Effect&lt;GutenbergReader.BooksListFeature.Action&gt; in GutenbergReader.BooksListFeature.body.getter : some"
+                  moduleName = "GutenbergReader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fikretonurozdil/Documents/GitHub/GutenbergReader/GutenbergReader/Features/BookList/BooksListFeature.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "1408">
+               </Location>
+               <Location
+                  uuid = "D5FBAA24-E414-4B18-AE0A-9F84D5BFCE01 - 30c4f9977db6df11"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (inout GutenbergReader.BooksListFeature.State, GutenbergReader.BooksListFeature.Action) -&gt; ComposableArchitecture.Effect&lt;GutenbergReader.BooksListFeature.Action&gt; in GutenbergReader.BooksListFeature.body.getter : some"
+                  moduleName = "GutenbergReader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fikretonurozdil/Documents/GitHub/GutenbergReader/GutenbergReader/Features/BookList/BooksListFeature.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "1596">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AF627C24-A4BB-4383-8DF5-58D68100BCF8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GutenbergReader/Features/BookList/BooksListFeature.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D6BC3BEF-6EB8-43B7-AA8C-AEB1CFE20D1F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GutenbergReader/Features/BookList/BooksListFeature.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

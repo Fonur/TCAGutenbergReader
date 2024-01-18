@@ -14,15 +14,21 @@ struct BooksListView: View {
     var body: some View {
         NavigationStackStore(self.store.scope(state: \.path, action: \.path)) {
             WithViewStore(self.store, observe: {$0}) { viewStore in
-                VStack(content: {
+                VStack(alignment: .leading, content: {
                     if viewStore.state.isLoading {
                         ProgressView()
                             .font(.largeTitle)
                             .onAppear { viewStore.send(.onAppear) }
                     } else {
                         List(viewStore.state.books, id: \.id) { book in
-                            NavigationLink(state: BookDetailFeature.State(book: book)) {
+                            HStack {
                                 Label(book.title, systemImage: "book.closed.fill")
+                                Spacer()
+                                Image(systemName: "chevron.right")
+                            }
+                            .contentShape(Rectangle())
+                            .onTapGesture {
+                                viewStore.send(.selectedButtonTapped(book))
                             }
                         }
                     }

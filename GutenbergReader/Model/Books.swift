@@ -23,7 +23,7 @@ struct Books: Equatable, Codable {
 // MARK: - Result
 struct Book: Equatable, Codable {
     static func == (lhs: Book, rhs: Book) -> Bool {
-        lhs.id == rhs.id
+        lhs.id == rhs.id && lhs.isBookmarked == rhs.isBookmarked
     }
 
     var id: Int
@@ -35,6 +35,7 @@ struct Book: Equatable, Codable {
     var mediaType: String
     var formats: Formats
     var downloadCount: Int
+    var isBookmarked = false
 
     enum CodingKeys: String, CodingKey {
         case id, title, authors, translators, subjects, bookshelves, languages, copyright
