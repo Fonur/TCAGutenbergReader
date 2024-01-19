@@ -31,5 +31,4 @@ final class AppFeatureTests: XCTestCase {
             state.appTab = .recentlyAdded
         }
     }
-
 }

@@ -59,11 +59,11 @@ struct Author: Codable {
 
 // MARK: - Formats
 struct Formats: Codable {
-    var textHTML, applicationEpubZip, applicationXMobipocketEbook: String
-    var applicationRDFXML: String
-    var imageJPEG: String
-    var textPlainCharsetUsASCII: String
-    var applicationOctetStream: String
+    var textHTML, applicationEpubZip, applicationXMobipocketEbook: String?
+    var applicationRDFXML: String?
+    var imageJPEG: String?
+    var textPlainCharsetUsASCII: String?
+    var applicationOctetStream: String?
     var textHTMLCharsetUTF8: String?
     var textPlainCharsetUTF8, textPlainCharsetISO88591: String?
     var textHTMLCharsetISO88591: String?

@@ -67,7 +67,7 @@ struct BookDetailFeature {
                 let url = state.book.formats.textPlainCharsetUsASCII
                 let title = state.book.title
                 return .run { send in
-                    try await send(.downloadAndSaveResponse(bookDetail.downloadAndSave(url, title)))
+                    try await send(.downloadAndSaveResponse(bookDetail.downloadAndSave(url!, title)))
                 }
             case .bookReader:
                 return .none
@@ -75,7 +75,7 @@ struct BookDetailFeature {
                 let url = state.book.formats.textPlainCharsetUsASCII
                 state.isSettingForReady = true
                 return .run { send in
-                    try await send(.download(bookDetail.download(url)))
+                    try await send(.download(bookDetail.download(url!)))
                 }
                 .cancellable(id: CancelID.load)
             case .setNavigation(isActive: false):

@@ -15,7 +15,7 @@ struct BooksListClient {
 extension BooksListClient: DependencyKey {
     static let liveValue = Self(fetch: {parameters in
         let (data, _) = try await URLSession.shared
-          .data(from: URL(string: "https://gutendex.com/books/\(parameters ?? "")")!)
+          .data(from: URL(string: "https://gutendex.com/books\(parameters ?? "")")!)
         let books = try! JSONDecoder().decode(Books.self, from: data)
         return books
     })

@@ -12,6 +12,7 @@ import SwiftUI
 @Reducer
 struct BooksListFeature {
     struct State: Equatable {
+        var parameters: String? = nil
         var isLoading: Bool = true
         var books: [Book] = []
         var bookmarkIDs: [Int] = []
@@ -34,8 +35,9 @@ struct BooksListFeature {
         Reduce { state, action in
             switch action {
             case .onAppear:
+                let parameters = state.parameters
                 return .run { send in
-                    try await send(.booksListedResponse(self.booksList.fetch(nil)))
+                    try await send(.booksListedResponse(self.booksList.fetch(parameters)))
                     try await send(.loadBookmarks(self.appStorage.fetchBookmarkIds()))
                 }
             case let .booksListedResponse(books):
