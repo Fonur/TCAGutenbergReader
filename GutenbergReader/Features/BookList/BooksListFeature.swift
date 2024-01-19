@@ -23,6 +23,7 @@ struct BooksListFeature {
         case booksListedResponse(Books)
         case loadBookmarks([Int])
         case path(StackAction<BookDetailFeature.State, BookDetailFeature.Action>)
+        case saveUserDefaults(Void)
         case selectedButtonTapped(Book)
     }
 
@@ -44,7 +45,7 @@ struct BooksListFeature {
             case let .loadBookmarks(fetchedBookmarks):
                 state.bookmarkIDs = fetchedBookmarks
                 return .none
-            case let .path(.element(id: id, action: .delegate(.saveBookmark(bookmarkID, bookmark)))):
+            case let .path(.element(id: _, action: .delegate(.saveBookmark(bookmarkID, bookmark)))):
                 if bookmark == false {
                     state.bookmarkIDs.removeAll { currentID in
                         currentID == bookmarkID
@@ -52,8 +53,13 @@ struct BooksListFeature {
                 } else {
                     state.bookmarkIDs.append(bookmarkID)
                 }
-                return .none
+                let bookmarkIDs = state.bookmarkIDs
+                return .run { send in
+                    try await send(.saveUserDefaults(self.appStorage.saveBookmarkIds(bookmarkIDs)))
+                }
             case .path(_):
+                return .none
+            case .saveUserDefaults:
                 return .none
             case let .selectedButtonTapped(book):
                 var book = book

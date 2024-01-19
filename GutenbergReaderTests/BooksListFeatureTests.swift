@@ -129,5 +129,6 @@ final class BooksListFeatureTests: XCTestCase {
         store.assert { state in
             state.bookmarkIDs = [46]
         }
+        await store.receive(\.saveUserDefaults)
     }
 }

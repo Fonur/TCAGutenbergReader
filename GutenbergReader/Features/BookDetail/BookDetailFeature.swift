@@ -29,7 +29,6 @@ struct BookDetailFeature {
         case downloadAndSaveResponse(Data?)
         case download(Data?)
         case downloadButtonTapped
-        case saveUserDefaults
         case setNavigation(isActive: Bool)
         enum Alert: Equatable { case downloadMessage }
         enum Delegate: Equatable {
@@ -71,11 +70,6 @@ struct BookDetailFeature {
                     try await send(.downloadAndSaveResponse(bookDetail.downloadAndSave(url, title)))
                 }
             case .bookReader:
-                return .none
-            case .saveUserDefaults:
-                let userDefaults = UserDefaults.standard
-                var books: [Int] = userDefaults.array(forKey: "books") as? [Int] ?? []
-                userDefaults.setValue([state.book.id], forKey: "books")
                 return .none
             case .setNavigation(isActive: true):
                 let url = state.book.formats.textPlainCharsetUsASCII
