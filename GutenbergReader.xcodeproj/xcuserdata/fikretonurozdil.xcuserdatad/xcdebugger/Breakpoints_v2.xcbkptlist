@@ -107,8 +107,8 @@
             filePath = "GutenbergReader/Features/BookDetail/BookDetailFeature.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -123,8 +123,8 @@
             filePath = "GutenbergReader/Features/BookList/BooksListFeature.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61">
+            startingLineNumber = "70"
+            endingLineNumber = "70">
             <Locations>
                <Location
                   uuid = "D5FBAA24-E414-4B18-AE0A-9F84D5BFCE01 - 30c4f9977db6dff6"
@@ -169,8 +169,8 @@
             filePath = "GutenbergReader/Features/BookList/BooksListFeature.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -185,8 +185,8 @@
             filePath = "GutenbergReader/Features/BookList/BooksListFeature.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>

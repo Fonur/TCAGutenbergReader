@@ -114,4 +114,20 @@ final class BooksListFeatureTests: XCTestCase {
             state.bookmarkIDs = [46]
         }
     }
+
+    func testDelegateToggleBookmark() async {
+        let book: Book = books!.results[0]
+        store.exhaustivity = .off
+        await store.send(.onAppear)
+        await store.skipReceivedActions()
+        await store.send(.path(.push(id: 0, state: BookDetailFeature.State(book: book))))
+        await store.send(.path(.element(id: 0, action: .delegate(.saveBookmark(46, false)))))
+        store.assert { state in
+            state.bookmarkIDs = []
+        }
+        await store.send(.path(.element(id: 0, action: .delegate(.saveBookmark(46, true)))))
+        store.assert { state in
+            state.bookmarkIDs = [46]
+        }
+    }
 }

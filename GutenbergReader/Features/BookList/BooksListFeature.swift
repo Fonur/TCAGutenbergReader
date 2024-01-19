@@ -44,6 +44,15 @@ struct BooksListFeature {
             case let .loadBookmarks(fetchedBookmarks):
                 state.bookmarkIDs = fetchedBookmarks
                 return .none
+            case let .path(.element(id: id, action: .delegate(.saveBookmark(bookmarkID, bookmark)))):
+                if bookmark == false {
+                    state.bookmarkIDs.removeAll { currentID in
+                        currentID == bookmarkID
+                    }
+                } else {
+                    state.bookmarkIDs.append(bookmarkID)
+                }
+                return .none
             case .path(_):
                 return .none
             case let .selectedButtonTapped(book):

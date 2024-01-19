@@ -25,12 +25,16 @@ struct BookDetailFeature {
         case alert(PresentationAction<Alert>)
         case bookmarkButtonTapped
         case bookReader(BookReaderFeature.Action)
+        case delegate(Delegate)
         case downloadAndSaveResponse(Data?)
         case download(Data?)
         case downloadButtonTapped
         case saveUserDefaults
         case setNavigation(isActive: Bool)
         enum Alert: Equatable { case downloadMessage }
+        enum Delegate: Equatable {
+            case saveBookmark(Int, Bool)
+        }
     }
 
     private enum CancelID { case load }
@@ -46,6 +50,8 @@ struct BookDetailFeature {
                 return .none
             case .bookmarkButtonTapped:
                 state.book.isBookmarked.toggle()
+                return .send(.delegate(.saveBookmark(state.book.id, state.book.isBookmarked)))
+            case .delegate(_):
                 return .none
             case let .download(data):
                 state.bookReader = BookReaderFeature.State(bookContent: data!)
