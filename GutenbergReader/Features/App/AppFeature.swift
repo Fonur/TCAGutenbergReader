@@ -19,13 +19,18 @@ struct AppFeature {
         var appTab: AppTab = .recentlyAdded
         var recentlyAddedTab = BooksListFeature.State(parameters: "?sort=descending")
         var bookmarksTab = BooksListFeature.State()
+        var bookmarkIDs: [Int] = []
     }
 
     enum Action {
-        case changeTab(AppTab)
-        case recentlyAddedTab(BooksListFeature.Action)
         case bookmarksTab(BooksListFeature.Action)
+        case changeTab(AppTab)
+        case loadBookmarks([Int])
+        case onAppear
+        case recentlyAddedTab(BooksListFeature.Action)
     }
+
+    @Dependency(\.appStorage) var appStorage
 
     var body: some ReducerOf<Self> {
         Scope(state: \.recentlyAddedTab, action: \.recentlyAddedTab) {
@@ -36,13 +41,20 @@ struct AppFeature {
         }
         Reduce { state, action in
             switch action {
+            case .bookmarksTab(_):
+                state.bookmarksTab = BooksListFeature.State(parameters: "")
+                return .none
             case let .changeTab(selectedTab):
                 state.appTab = selectedTab
                 return .none
-            case .recentlyAddedTab(_):
+            case let .loadBookmarks(bookmarks):
+                state.bookmarkIDs = bookmarks
                 return .none
-            case .bookmarksTab(_):
-                state.bookmarksTab = BooksListFeature.State(parameters: "")
+            case .onAppear:
+                return .run { send in
+                    try await send(.loadBookmarks(appStorage.fetchBookmarkIds()))
+                }
+            case .recentlyAddedTab(_):
                 return .none
             }
         }

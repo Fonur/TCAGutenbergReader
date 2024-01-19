@@ -31,4 +31,13 @@ final class AppFeatureTests: XCTestCase {
             state.appTab = .recentlyAdded
         }
     }
+
+    func testLoadBookmarks() async {
+        store.exhaustivity = .off
+        await store.send(.onAppear)
+        await store.receive(\.loadBookmarks)
+        store.assert { state in
+            state.bookmarkIDs = [46]
+        }
+    }
 }

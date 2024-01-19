@@ -106,15 +106,6 @@ final class BooksListFeatureTests: XCTestCase {
         }
     }
 
-    func testLoadBookmarks() async {
-        store.exhaustivity = .off
-        await store.send(.onAppear)
-        await store.skipReceivedActions()
-        store.assert { state in
-            state.bookmarkIDs = [46]
-        }
-    }
-
     func testDelegateToggleBookmark() async {
         let book: Book = books!.results[0]
         store.exhaustivity = .off
