@@ -17,7 +17,7 @@ final class BooksListFeatureTests: XCTestCase {
         self.store = TestStore(initialState: BooksListFeature.State()) {
             BooksListFeature()
         } withDependencies: {
-            $0.bookList.fetch = { self.books! }
+            $0.bookList.fetch = {_ in self.books! }
         }
     }
 

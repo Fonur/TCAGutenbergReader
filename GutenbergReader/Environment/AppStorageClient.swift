@@ -21,9 +21,7 @@ extension AppStorageClient: DependencyKey {
     })
     static let testValue = Self(fetchBookmarkIds: {
         return [46]
-    }, saveBookmarkIds: { _ in
-
-    })
+    }, saveBookmarkIds: { _ in })
 }
 
 extension DependencyValues {

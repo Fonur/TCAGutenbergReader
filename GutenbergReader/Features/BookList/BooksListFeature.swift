@@ -35,7 +35,7 @@ struct BooksListFeature {
             switch action {
             case .onAppear:
                 return .run { send in
-                    try await send(.booksListedResponse(self.booksList.fetch()))
+                    try await send(.booksListedResponse(self.booksList.fetch(nil)))
                     try await send(.loadBookmarks(self.appStorage.fetchBookmarkIds()))
                 }
             case let .booksListedResponse(books):

@@ -9,13 +9,13 @@ import Foundation
 import ComposableArchitecture
 
 struct BooksListClient {
-    var fetch: () async throws -> Books
+    var fetch: (_ parameters: String?) async throws -> Books
 }
 
 extension BooksListClient: DependencyKey {
-    static let liveValue = Self(fetch: {
+    static let liveValue = Self(fetch: {parameters in
         let (data, _) = try await URLSession.shared
-          .data(from: URL(string: "https://gutendex.com/books")!)
+          .data(from: URL(string: "https://gutendex.com/books/\(parameters ?? "")")!)
         let books = try! JSONDecoder().decode(Books.self, from: data)
         return books
     })
