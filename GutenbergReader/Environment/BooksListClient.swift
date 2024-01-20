@@ -19,6 +19,9 @@ extension BooksListClient: DependencyKey {
         let books = try! JSONDecoder().decode(Books.self, from: data)
         return books
     })
+    static let testValue = Self(fetch: { parameters in
+        return MockupBooks.books!
+    })
 }
 
 extension DependencyValues {

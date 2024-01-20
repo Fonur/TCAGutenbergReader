@@ -31,7 +31,22 @@ final class AppFeatureTests: XCTestCase {
             state.appTab = .recentlyAdded
         }
     }
-    
+
+    func testChangeTab_LoadBookmarksAfterBookmarkToggle() async {
+        store.exhaustivity = .off
+        await store.send(.onAppear)
+        await store.skipReceivedActions()
+        await store.send(.bookmarksTab(.onAppear))
+        await store.skipReceivedActions()
+        store.assert { state in
+            state.bookmarksTab.books = [MockupBooks.books!.results[0]]
+        }
+        await store.send(.bookmarksTab(.delegate(.saveBookmark(46, false))))
+        store.assert { state in
+            state.bookmarksTab.books = []
+        }
+    }
+
     func testLoadBookmarks() async {
         store.exhaustivity = .off
         await store.send(.onAppear)

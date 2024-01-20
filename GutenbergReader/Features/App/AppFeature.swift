@@ -77,6 +77,10 @@ struct AppFeature {
                 let bookmarkIDs = state.bookmarkIDs
                 state.recentlyAddedTab.bookmarkIDs = state.bookmarkIDs
                 state.bookmarksTab.bookmarkIDs = state.bookmarkIDs
+                state.bookmarksTab.books = state.bookmarksTab.books.compactMap({ book in
+                    if bookmarkIDs.contains(book.id) { return book }
+                    return nil
+                })
                 return .run { send in
                     try await send(.saveUserDefaults(appStorage.saveBookmarkIds(bookmarkIDs)))
                 }
