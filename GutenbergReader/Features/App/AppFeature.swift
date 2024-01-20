@@ -25,6 +25,7 @@ struct AppFeature {
     enum Action {
         case bookmarksTab(BooksListFeature.Action)
         case changeTab(AppTab)
+        case saveUserDefaults(Void)
         case loadBookmarks([Int])
         case onAppear
         case recentlyAddedTab(BooksListFeature.Action)
@@ -41,11 +42,21 @@ struct AppFeature {
         }
         Reduce { state, action in
             switch action {
-            case .bookmarksTab(_):
-                state.bookmarksTab = BooksListFeature.State(parameters: "")
-                return .none
             case let .changeTab(selectedTab):
-                state.appTab = selectedTab
+                switch selectedTab {
+                case .bookmarks where !state.bookmarkIDs.isEmpty:
+                    let bookmarkIDs: String = state.bookmarkIDs.reduce("") { result, number in
+                        result + String(number) + ","
+                    }.trimmingCharacters(in: CharacterSet(charactersIn: ","))
+                    state.bookmarksTab = BooksListFeature.State(parameters: "?ids=\(bookmarkIDs)", bookmarkIDs: state.bookmarkIDs)
+                    state.appTab = selectedTab
+                case .recentlyAdded:
+                    state.recentlyAddedTab = BooksListFeature.State(parameters: "?sort=descending", bookmarkIDs: state.bookmarkIDs)
+                    state.appTab = selectedTab
+                case .bookmarks:
+                    state.appTab = selectedTab
+                    break
+                }
                 return .none
             case let .loadBookmarks(bookmarks):
                 state.bookmarkIDs = bookmarks
@@ -54,7 +65,24 @@ struct AppFeature {
                 return .run { send in
                     try await send(.loadBookmarks(appStorage.fetchBookmarkIds()))
                 }
+            case let .recentlyAddedTab(.delegate(.saveBookmark(bookmarkID, bookmark))),
+                let .bookmarksTab(.delegate(.saveBookmark(bookmarkID, bookmark))):
+                bookmark == true
+                    ? state.bookmarkIDs.append(bookmarkID)
+                    : state.bookmarkIDs.removeAll(where: { currentBookmark in
+                        currentBookmark == bookmarkID
+                    })
+                let bookmarkIDs = state.bookmarkIDs
+                state.recentlyAddedTab.bookmarkIDs = state.bookmarkIDs
+                state.bookmarksTab.bookmarkIDs = state.bookmarkIDs
+                return .run { send in
+                    try await send(.saveUserDefaults(appStorage.saveBookmarkIds(bookmarkIDs)))
+                }
             case .recentlyAddedTab(_):
+                return .none
+            case .bookmarksTab(_):
+                return .none
+            case .saveUserDefaults():
                 return .none
             }
         }

@@ -20,7 +20,7 @@ extension AppStorageClient: DependencyKey {
         UserDefaults.standard.setValue(ids, forKey: "bookmarks")
     })
     static let testValue = Self(fetchBookmarkIds: {
-        return [46]
+        return [46, 2, 3, 1]
     }, saveBookmarkIds: { _ in })
 }
 

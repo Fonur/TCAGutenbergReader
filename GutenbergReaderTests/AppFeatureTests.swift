@@ -37,7 +37,56 @@ final class AppFeatureTests: XCTestCase {
         await store.send(.onAppear)
         await store.receive(\.loadBookmarks)
         store.assert { state in
-            state.bookmarkIDs = [46]
+            state.bookmarkIDs = [46, 2, 3, 1]
+        }
+    }
+
+    func testShowBookmarkedBooks() async {
+        await store.send(.onAppear)
+        await store.receive(\.loadBookmarks) { state in
+            state.bookmarkIDs = [46, 2, 3, 1]
+        }
+        await store.send(.changeTab(.bookmarks)) { state in
+            state.appTab = .bookmarks
+            state.bookmarksTab = BooksListFeature.State(parameters: "?ids=46,2,3,1")
+            state.bookmarksTab.bookmarkIDs = state.bookmarkIDs
+        }
+
+    }
+
+    func testRecentlyAddedDelegateToggleBookmark() async {
+        let book = MockupBooks.books!.results[0]
+        store.exhaustivity = .off
+
+        await store.send(.onAppear)
+        await store.skipReceivedActions()
+        await store.send(.recentlyAddedTab(.delegate(.saveBookmark(46, false))))
+        store.assert { state in
+            state.bookmarkIDs = [2, 3, 1]
+        }
+        await store.send(.recentlyAddedTab(.delegate(.saveBookmark(46, true))))
+        store.assert { state in
+            state.bookmarkIDs = [2, 3, 1, 46]
+            state.recentlyAddedTab.bookmarkIDs = state.bookmarkIDs
+            state.bookmarksTab.bookmarkIDs = state.bookmarkIDs
+        }
+    }
+
+    func testBookmarkDelegateToggleBookmark() async {
+        let book = MockupBooks.books!.results[0]
+        store.exhaustivity = .off
+
+        await store.send(.onAppear)
+        await store.skipReceivedActions()
+        await store.send(.bookmarksTab(.delegate(.saveBookmark(46, false))))
+        store.assert { state in
+            state.bookmarkIDs = [2, 3, 1]
+        }
+        await store.send(.bookmarksTab(.delegate(.saveBookmark(46, true))))
+        store.assert { state in
+            state.bookmarkIDs = [2, 3, 1, 46]
+            state.recentlyAddedTab.bookmarkIDs = state.bookmarkIDs
+            state.bookmarksTab.bookmarkIDs = state.bookmarkIDs
         }
     }
 }

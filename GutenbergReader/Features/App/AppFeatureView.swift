@@ -19,7 +19,7 @@ struct AppFeatureView: View {
                         viewStore.send(.changeTab(.recentlyAdded))
                     } label: {
                         Text("Recently Added")
-                            .frame(width: 200, height: 75)
+                            .frame(width: 150, height: 50)
                             .background {
                                 Rectangle()
                                     .stroke(lineWidth: 1.0)
@@ -31,7 +31,7 @@ struct AppFeatureView: View {
                         viewStore.send(.changeTab(.bookmarks))
                     } label: {
                         Text("Bookmarks")
-                            .frame(width: 200, height: 75)
+                            .frame(width: 150, height: 50)
                             .background {
                                 Rectangle()
                                     .stroke(lineWidth: 1.0)
@@ -48,6 +48,9 @@ struct AppFeatureView: View {
                         .tag(AppTab.bookmarks)
                 }
                 .tabViewStyle(.page(indexDisplayMode: .never))
+                .onAppear {
+                    viewStore.send(.onAppear)
+                }
             }
         }
     }

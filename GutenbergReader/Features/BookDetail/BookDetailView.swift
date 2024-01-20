@@ -25,7 +25,7 @@ struct BookDetailView: View {
                 .foregroundStyle(.gray)
                 HStack(content: {
                     Spacer()
-                    AsyncImage(url: URL(string: viewStore.state.book.formats.imageJPEG!)) { image in
+                    AsyncImage(url: URL(string: viewStore.state.book.formats.imageJPEG ?? "")) { image in
                         image
                             .resizable()
                             .scaledToFit()

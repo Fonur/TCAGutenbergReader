@@ -8,7 +8,7 @@ import Foundation
 // MARK: - Books
 struct Books: Equatable, Codable {
     var count: Int
-    var next: String
+    var next: String?
     var previous: JSONNull?
     var results: [Book]
 
