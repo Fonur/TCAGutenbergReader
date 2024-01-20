@@ -18,7 +18,6 @@ struct BooksListView: View {
                     if viewStore.state.isLoading {
                         ProgressView()
                             .font(.largeTitle)
-                            .onAppear { viewStore.send(.onAppear) }
                     } else {
                         List(viewStore.state.books, id: \.id) { book in
                             HStack {
@@ -31,6 +30,7 @@ struct BooksListView: View {
                                 viewStore.send(.selectedButtonTapped(book))
                             }
                         }
+                        .scrollContentBackground(.hidden)
                     }
                 })
             }

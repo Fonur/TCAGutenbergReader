@@ -44,8 +44,14 @@ struct AppFeatureView: View {
                 TabView(selection: viewStore.binding(get: \.appTab, send: { .changeTab($0) } )) {
                     BooksListView(store: store.scope(state: \.recentlyAddedTab, action: \.recentlyAddedTab))
                         .tag(AppTab.recentlyAdded)
+                        .onAppear {
+                            viewStore.send(.recentlyAddedTab(.onAppear))
+                        }
                     BooksListView(store: store.scope(state: \.bookmarksTab, action: \.bookmarksTab))
                         .tag(AppTab.bookmarks)
+                        .onAppear {
+                            viewStore.send(.bookmarksTab(.onAppear))
+                        }
                 }
                 .tabViewStyle(.page(indexDisplayMode: .never))
                 .onAppear {
