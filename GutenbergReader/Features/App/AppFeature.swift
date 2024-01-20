@@ -48,10 +48,12 @@ struct AppFeature {
                     let bookmarkIDs: String = state.bookmarkIDs.reduce("") { result, number in
                         result + String(number) + ","
                     }.trimmingCharacters(in: CharacterSet(charactersIn: ","))
-                    state.bookmarksTab = BooksListFeature.State(parameters: "?ids=\(bookmarkIDs)", bookmarkIDs: state.bookmarkIDs)
+                    state.bookmarksTab.bookmarkIDs = state.bookmarkIDs
+                    state.bookmarksTab.parameters = "?ids=\(bookmarkIDs)"
                     state.appTab = selectedTab
                 case .recentlyAdded:
-                    state.recentlyAddedTab = BooksListFeature.State(parameters: "?sort=descending", bookmarkIDs: state.bookmarkIDs)
+                    state.recentlyAddedTab.bookmarkIDs = state.bookmarkIDs
+                    state.recentlyAddedTab.parameters = "?sort=descending"
                     state.appTab = selectedTab
                 case .bookmarks:
                     state.appTab = selectedTab

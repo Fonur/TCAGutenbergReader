@@ -31,7 +31,7 @@ final class AppFeatureTests: XCTestCase {
             state.appTab = .recentlyAdded
         }
     }
-
+    
     func testLoadBookmarks() async {
         store.exhaustivity = .off
         await store.send(.onAppear)
