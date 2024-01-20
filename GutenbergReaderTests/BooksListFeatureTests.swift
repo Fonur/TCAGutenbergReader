@@ -38,7 +38,7 @@ final class BooksListFeatureTests: XCTestCase {
         await store.skipReceivedActions()
         await store.send(.path(.push(id: 0, state: BookDetailFeature.State(book: book))))
         store.assert { state in
-            state.path = StackState([BookDetailFeature.State(book: book)])
+            state.path[id: 0] = BookDetailFeature.State(book: book)
         }
     }
 }
