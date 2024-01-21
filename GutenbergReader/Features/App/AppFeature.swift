@@ -19,6 +19,7 @@ struct AppFeature {
         var appTab: AppTab = .recentlyAdded
         var recentlyAddedTab = BooksListFeature.State(parameters: "?sort=descending")
         var bookmarksTab = BooksListFeature.State()
+        var searchTab = SearchFeature.State(books: [])
         var bookmarkIDs: [Int] = []
     }
 
@@ -29,6 +30,7 @@ struct AppFeature {
         case loadBookmarks([Int])
         case onAppear
         case recentlyAddedTab(BooksListFeature.Action)
+        case searchTab(SearchFeature.Action)
     }
 
     @Dependency(\.appStorage) var appStorage
@@ -39,6 +41,9 @@ struct AppFeature {
         }
         Scope(state: \.bookmarksTab, action: \.bookmarksTab) {
             BooksListFeature()
+        }
+        Scope(state: \.searchTab, action: \.searchTab) {
+            SearchFeature()
         }
         Reduce { state, action in
             switch action {
@@ -68,7 +73,8 @@ struct AppFeature {
                     try await send(.loadBookmarks(appStorage.fetchBookmarkIds()))
                 }
             case let .recentlyAddedTab(.delegate(.saveBookmark(bookmarkID, bookmark))),
-                let .bookmarksTab(.delegate(.saveBookmark(bookmarkID, bookmark))):
+                let .bookmarksTab(.delegate(.saveBookmark(bookmarkID, bookmark))),
+                let .searchTab(.delegate(.saveBookmark(bookmarkID, bookmark))):
                 bookmark == true
                     ? state.bookmarkIDs.append(bookmarkID)
                     : state.bookmarkIDs.removeAll(where: { currentBookmark in
@@ -89,6 +95,8 @@ struct AppFeature {
             case .bookmarksTab(_):
                 return .none
             case .saveUserDefaults():
+                return .none
+            case .searchTab(_):
                 return .none
             }
         }

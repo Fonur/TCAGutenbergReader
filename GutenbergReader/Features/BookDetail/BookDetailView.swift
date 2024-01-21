@@ -14,7 +14,9 @@ struct BookDetailView: View {
     var body: some View {
         WithViewStore(self.store) { $0 } content: { viewStore in
             VStack(alignment: .leading, content: {
-                Text("\(viewStore.book.title)").font(.largeTitle)
+                Text("\(viewStore.book.title)")
+                    .font(.custom("CormorantGaramond-Regular", size: 32))
+                    .fontWeight(.bold)
                 HStack(spacing:3, content: {
                     Text("by")
                     ForEach(viewStore.book.authors, id:\.name) { author in
@@ -22,6 +24,7 @@ struct BookDetailView: View {
                     }
                 })
                 .font(.callout)
+                .italic()
                 .foregroundStyle(.gray)
                 HStack(content: {
                     Spacer()
@@ -40,12 +43,14 @@ struct BookDetailView: View {
                 HStack(alignment: .top, spacing: 5, content: {
                     ForEach(viewStore.book.bookshelves, id:\.self) { subject in
                         Text(subject)
+                            .foregroundStyle(Color.white)
                             .lineLimit(2)
                             .font(.caption)
+                            .fontWeight(.bold)
                             .padding()
                             .background {
                                 RoundedRectangle(cornerRadius: 25.0)
-                                    .fill(.gray.opacity(0.7))
+                                    .fill(Color("DarkGray"))
                                     .frame(height: 35)
                             }
                     }
@@ -82,20 +87,6 @@ struct BookDetailView: View {
                 }
                 Spacer()
                 HStack(alignment:.center) {
-                    Button {
-                        viewStore.send(.setNavigation(isActive: true))
-                    } label: {
-                        HStack {
-                            Text("Read")
-                            Image(systemName: "book")
-                        }
-                        .font(.title3)
-                        .background {
-                            RoundedRectangle(cornerRadius: 15.0)
-                                .stroke()
-                                .frame(width: 150, height: 40, alignment: .center)
-                        }
-                    }
                     Spacer()
                     Button {
                         viewStore.send(.downloadButtonTapped)

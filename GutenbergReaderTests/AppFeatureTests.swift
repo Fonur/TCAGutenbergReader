@@ -104,4 +104,22 @@ final class AppFeatureTests: XCTestCase {
             state.bookmarksTab.bookmarkIDs = state.bookmarkIDs
         }
     }
+
+    func testSeachDelegateToggleBookmark() async {
+        let book = MockupBooks.books!.results[0]
+        store.exhaustivity = .off
+
+        await store.send(.onAppear)
+        await store.skipReceivedActions()
+        await store.send(.searchTab(.delegate(.saveBookmark(46, false))))
+        store.assert { state in
+            state.bookmarkIDs = [2, 3, 1]
+        }
+        await store.send(.searchTab(.delegate(.saveBookmark(46, true))))
+        store.assert { state in
+            state.bookmarkIDs = [2, 3, 1, 46]
+            state.recentlyAddedTab.bookmarkIDs = state.bookmarkIDs
+            state.bookmarksTab.bookmarkIDs = state.bookmarkIDs
+        }
+    }
 }
