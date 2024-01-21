@@ -19,6 +19,7 @@ struct AppFeature {
         var appTab: AppTab = .recentlyAdded
         var recentlyAddedTab = BooksListFeature.State(parameters: "?sort=descending")
         var bookmarksTab = BooksListFeature.State()
+        var settingsTab = SettingsFeature.State()
         var searchTab = SearchFeature.State(books: [])
         var bookmarkIDs: [Int] = []
     }
@@ -31,6 +32,7 @@ struct AppFeature {
         case onAppear
         case recentlyAddedTab(BooksListFeature.Action)
         case searchTab(SearchFeature.Action)
+        case settingsTab(SettingsFeature.Action)
     }
 
     @Dependency(\.appStorage) var appStorage
@@ -44,6 +46,9 @@ struct AppFeature {
         }
         Scope(state: \.searchTab, action: \.searchTab) {
             SearchFeature()
+        }
+        Scope(state: \.settingsTab, action: \.settingsTab) {
+            SettingsFeature()
         }
         Reduce { state, action in
             switch action {
@@ -97,6 +102,8 @@ struct AppFeature {
             case .saveUserDefaults():
                 return .none
             case .searchTab(_):
+                return .none
+            case .settingsTab(_):
                 return .none
             }
         }

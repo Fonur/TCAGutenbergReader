@@ -187,5 +187,69 @@
             endingLineNumber = "67">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "655570CB-33FF-4F5C-A16D-4431D898F2CD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GutenbergReader/Environment/SettingsAppStorage.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "liveValue"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "39D9765F-6E00-466F-BA92-F382CE55B4AD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GutenbergReader/Environment/SettingsAppStorage.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "liveValue"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "39D9765F-6E00-466F-BA92-F382CE55B4AD - 9291b4e12065861a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 () async throws -&gt; GutenbergReader.Settings in variable initialization expression of static GutenbergReader.SettingsAppStorage.liveValue : GutenbergReader.SettingsAppStorage"
+                  moduleName = "GutenbergReader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fikretonurozdil/Documents/GitHub/GutenbergReader/GutenbergReader/Environment/SettingsAppStorage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "848">
+               </Location>
+               <Location
+                  uuid = "39D9765F-6E00-466F-BA92-F382CE55B4AD - 9291b4e12065861a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 () async throws -&gt; GutenbergReader.Settings in variable initialization expression of static GutenbergReader.SettingsAppStorage.liveValue : GutenbergReader.SettingsAppStorage"
+                  moduleName = "GutenbergReader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fikretonurozdil/Documents/GitHub/GutenbergReader/GutenbergReader/Environment/SettingsAppStorage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "856">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

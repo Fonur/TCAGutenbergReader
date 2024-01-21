@@ -44,9 +44,11 @@ struct SearchFeatureView: View {
 }
 
 
-let store = Store(initialState: SearchFeature.State(text:"Romeo", books: [])) {
-    SearchFeature()
-}
+
 #Preview {
-    SearchFeatureView(store: store)
+    let store = Store(initialState: SearchFeature.State(text:"Romeo", books: [])) {
+        SearchFeature()
+    }
+
+    return SearchFeatureView(store: store)
 }

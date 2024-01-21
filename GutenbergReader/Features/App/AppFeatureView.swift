@@ -70,6 +70,10 @@ struct AppFeatureView: View {
                     .tabItem {
                         Label("Search", systemImage: "magnifyingglass")
                     }
+                SettingsFeatureView(store: self.store.scope(state: \.settingsTab, action: \.settingsTab))
+                    .tabItem {
+                        Label("Settings", systemImage: "gear")
+                    }
             }
 
         }

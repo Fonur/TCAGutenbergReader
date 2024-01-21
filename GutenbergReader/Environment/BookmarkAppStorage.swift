@@ -8,12 +8,12 @@
 import Foundation
 import ComposableArchitecture
 
-struct AppStorageClient {
+struct BookmarkAppStorage {
     var fetchBookmarkIds: () async throws -> [Int]
     var saveBookmarkIds: ([Int]) async throws -> Void
 }
 
-extension AppStorageClient: DependencyKey {
+extension BookmarkAppStorage: DependencyKey {
     static let liveValue = Self(fetchBookmarkIds: {
         return UserDefaults.standard.object(forKey: "bookmarks") as? [Int] ?? []
     }, saveBookmarkIds: { ids in
@@ -25,8 +25,8 @@ extension AppStorageClient: DependencyKey {
 }
 
 extension DependencyValues {
-    var appStorage: AppStorageClient {
-        get { self[AppStorageClient.self] }
-        set { self[AppStorageClient.self] = newValue }
+    var appStorage: BookmarkAppStorage {
+        get { self[BookmarkAppStorage.self] }
+        set { self[BookmarkAppStorage.self] = newValue }
     }
 }
