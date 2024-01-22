@@ -21,7 +21,10 @@ struct Books: Equatable, Codable {
 }
 
 // MARK: - Result
-struct Book: Equatable, Codable {
+struct Book: Equatable, Codable , Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
     static func == (lhs: Book, rhs: Book) -> Bool {
         lhs.id == rhs.id && lhs.isBookmarked == rhs.isBookmarked
     }

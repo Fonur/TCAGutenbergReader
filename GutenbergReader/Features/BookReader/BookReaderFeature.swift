@@ -11,8 +11,7 @@ import ComposableArchitecture
 
 @Reducer
 struct BookReaderFeature {
-    struct State: Equatable {
-        @PresentationState var alert: AlertState<Action.Alert>?
+    struct State: Codable, Equatable, Hashable {
         let bookContent: Data
         var text: String = ""
         var showingText: String = ""

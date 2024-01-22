@@ -34,9 +34,18 @@ final class SearchFeatureTests: XCTestCase {
         store.exhaustivity = .off
         await self.store.send(.searchTextChanged("A Christmas"))
         await self.store.receive(\.searchedBookList)
-        await self.store.send(.path(.push(id: 0, state: BookDetailFeature.State(book: book))))
-        store.assert {state in 
-            state.path[id: 0] = BookDetailFeature.State(book: self.book)
+        await self.store.send(.selectedBook(book))
+        store.assert {state in
+            state.path[id: 0] = .bookDetail(BookDetailFeature.State(book: self.book))
+        }
+    }
+
+    func testReadButtonTapped() async {
+        await store.send(.path(.push(id: 0, state: .bookDetail(BookDetailFeature.State(book: book))))) { state in
+            state.path[id: 0] = .bookDetail(BookDetailFeature.State(book: self.book))
+        }
+        await store.send(.path(.element(id: 0, action: .bookDetail(.readButtonTapped(Data()))))) { state in
+            state.path[id: 1] = .bookReader(BookReaderFeature.State(bookContent: Data()))
         }
     }
 }

@@ -9,7 +9,9 @@ import ComposableArchitecture
 import SwiftUI
 
 struct BooksListView: View {
-    let store: StoreOf<BooksListFeature>
+    @State var store = Store(initialState: BooksListFeature.State()) {
+        BooksListFeature()
+    }
 
     var body: some View {
         NavigationStackStore(self.store.scope(state: \.path, action: \.path)) {
@@ -34,8 +36,21 @@ struct BooksListView: View {
                     }
                 })
             }
-        } destination: { store in
-            BookDetailView(store: store)
+        } destination: {
+            switch $0 {
+            case .bookDetail:
+                CaseLet(
+                    \BooksListFeature.Path.State.bookDetail,
+                     action: BooksListFeature.Path.Action.bookDetail,
+                     then: BookDetailView.init(store:)
+                )
+            case .bookReader:
+                CaseLet(
+                    \BooksListFeature.Path.State.bookReader,
+                     action: BooksListFeature.Path.Action.bookReader,
+                     then: BookReaderView.init(store:)
+                )
+            }
         }
     }
 }

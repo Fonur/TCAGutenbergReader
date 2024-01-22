@@ -89,10 +89,14 @@ final class BookDetailFeatureTests: XCTestCase {
         await store.receive(\.downloadAndSaveResponse) { state in
             state.isDownloading = false
             state.bookContent = Data()
-            state.alert = .downloadMessage()
+        }
+
+        await store.receive(\.isDownloadedBook) { state in
+            state.bookContent = Data()
+            state.isDownloadedBook = true
         }
     }
-    
+
     func testBookmarkBookTapped() async {
         store.exhaustivity = .off
         await store.send(.bookmarkButtonTapped) { state in

@@ -11,8 +11,7 @@ import SwiftUI
 
 @Reducer
 struct BookDetailFeature {
-    struct State: Equatable {
-        @PresentationState var alert: AlertState<Action.Alert>?
+    struct State: Codable, Equatable, Hashable {
         var bookReader: BookReaderFeature.State?
         var book: Book
         var bookContent: Data?
@@ -28,6 +27,7 @@ struct BookDetailFeature {
         case delegate(Delegate)
         case downloadAndSaveResponse(Data?)
         case downloadButtonTapped
+        case readButtonTapped(Data)
         case onAppear
         case isDownloadedBook(Data?)
         enum Alert: Equatable { case downloadMessage }
@@ -53,12 +53,15 @@ struct BookDetailFeature {
             case .delegate(_):
                 return .none
             case let .downloadAndSaveResponse(data):
+                let id = String(state.book.id)
                 state.isDownloading = false
                 state.bookContent = data
                 if state.bookContent != nil {
-                    state.alert = .downloadMessage()
+                    //state.alert = .downloadMessage()
                 }
-                return .none
+                return .run { send in
+                    try await send(.isDownloadedBook(bookDetail.loadBook(id)))
+                }
             case .downloadButtonTapped:
                 state.isDownloading = true
                 let url = state.book.formats.textPlainCharsetUsASCII
@@ -80,6 +83,8 @@ struct BookDetailFeature {
                 } else {
                     state.isDownloadedBook = false
                 }
+                return .none
+            case .readButtonTapped:
                 return .none
             }
         }

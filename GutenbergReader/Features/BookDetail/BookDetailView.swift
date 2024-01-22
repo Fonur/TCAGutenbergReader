@@ -87,6 +87,21 @@ struct BookDetailView: View {
                 }
                 Spacer()
                 HStack(alignment:.center) {
+                    Button {
+                        viewStore.send(.readButtonTapped(viewStore.bookContent ?? Data()))
+                    } label: {
+                        HStack {
+                            Text("Read")
+                            Image(systemName: "book")
+                        }
+                        .font(.title3)
+                        .background {
+                            RoundedRectangle(cornerRadius: 15.0)
+                                .stroke()
+                                .frame(width: 150, height: 40, alignment: .center)
+                        }
+                    }
+                    .disabled(!viewStore.isDownloadedBook)
                     Spacer()
                     Button {
                         viewStore.send(.downloadButtonTapped)
@@ -112,7 +127,6 @@ struct BookDetailView: View {
             .onAppear(perform: {
                 viewStore.send(.onAppear)
             })
-            .alert(store: self.store.scope(state: \.$alert, action: \.alert))
             .padding(10)
             .toolbar(content: {
                 ToolbarItem(placement: .topBarTrailing) {
