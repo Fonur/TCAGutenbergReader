@@ -18,7 +18,7 @@ struct BookDetailFeature {
         var bookContent: Data?
         var readContentURL: String?
         var isDownloading = false
-        var isSettingForReady = false
+        var isDownloadedBook = false
     }
 
     enum Action {
@@ -27,9 +27,9 @@ struct BookDetailFeature {
         case bookReader(BookReaderFeature.Action)
         case delegate(Delegate)
         case downloadAndSaveResponse(Data?)
-        case download(Data?)
         case downloadButtonTapped
-        case setNavigation(isActive: Bool)
+        case onAppear
+        case isDownloadedBook(Data?)
         enum Alert: Equatable { case downloadMessage }
         enum Delegate: Equatable {
             case saveBookmark(Int, Bool)
@@ -52,9 +52,6 @@ struct BookDetailFeature {
                 return .send(.delegate(.saveBookmark(state.book.id, state.book.isBookmarked)))
             case .delegate(_):
                 return .none
-            case let .download(data):
-                state.bookReader = BookReaderFeature.State(bookContent: data!)
-                return .none
             case let .downloadAndSaveResponse(data):
                 state.isDownloading = false
                 state.bookContent = data
@@ -65,23 +62,25 @@ struct BookDetailFeature {
             case .downloadButtonTapped:
                 state.isDownloading = true
                 let url = state.book.formats.textPlainCharsetUsASCII
-                let title = state.book.title
+                let id = String(state.book.id)
                 return .run { send in
-                    try await send(.downloadAndSaveResponse(bookDetail.downloadAndSave(url!, title)))
+                    try await send(.downloadAndSaveResponse(bookDetail.downloadAndSave(url!, id)))
                 }
             case .bookReader:
                 return .none
-            case .setNavigation(isActive: true):
-                let url = state.book.formats.textPlainCharsetUsASCII
-                state.isSettingForReady = true
+            case .onAppear:
+                let id = String(state.book.id)
                 return .run { send in
-                    try await send(.download(bookDetail.download(url!)))
+                    try await send(.isDownloadedBook(bookDetail.loadBook(id)))
                 }
-                .cancellable(id: CancelID.load)
-            case .setNavigation(isActive: false):
-                state.isSettingForReady = false
-                state.bookReader = nil
-                return .cancel(id: CancelID.load)
+            case let .isDownloadedBook(data):
+                if let data {
+                    state.isDownloadedBook = true
+                    state.bookContent = data
+                } else {
+                    state.isDownloadedBook = false
+                }
+                return .none
             }
         }
         .ifLet(\.bookReader, action: \.bookReader) {

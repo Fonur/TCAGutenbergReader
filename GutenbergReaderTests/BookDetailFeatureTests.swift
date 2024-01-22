@@ -80,22 +80,6 @@ final class BookDetailFeatureTests: XCTestCase {
     }
     
     var success = false
-    
-    func testReadButtonTapped() async {
-        await store.send(.setNavigation(isActive: true)) { state in
-            state.isSettingForReady = true
-        }
-
-        await store.receive(\.download) { state in
-            state.bookReader = BookReaderFeature.State(bookContent: Data())
-        }
-
-        await store.send(.setNavigation(isActive: false)) { state in
-            state.isSettingForReady = false
-            state.bookReader = nil
-        }
-    }
-
 
     func testDownloadButtonTapped() async {
         await store.send(.downloadButtonTapped) { state in
@@ -118,7 +102,14 @@ final class BookDetailFeatureTests: XCTestCase {
         await store.send(.bookmarkButtonTapped) { state in
             state.book.isBookmarked = false
         }
+    }
 
-
+    func testLoadBook() async {
+        store.exhaustivity = .off
+        await store.send(.onAppear)
+        await store.receive(\.isDownloadedBook) { state in
+            state.bookContent = Data()
+            state.isDownloadedBook = true
+        }
     }
 }

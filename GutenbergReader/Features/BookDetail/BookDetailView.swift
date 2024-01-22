@@ -92,7 +92,7 @@ struct BookDetailView: View {
                         viewStore.send(.downloadButtonTapped)
                     } label: {
                         HStack {
-                            Text("Download")
+                            viewStore.isDownloadedBook ? Text("Downloaded") : Text("Download")
                             viewStore.isDownloading ?
                             AnyView(Image(systemName: "arrow.down.circle.dotted")
                                 .symbolEffect(.variableColor.iterative, options: .repeating.speed(0.05)))
@@ -105,20 +105,12 @@ struct BookDetailView: View {
                                 .frame(width: 150, height: 40, alignment: .center)
                         }
                     }
-                    .disabled(viewStore.isDownloading)
+                    .disabled(viewStore.isDownloading || viewStore.isDownloadedBook)
                 }
                 .padding(.horizontal, 40)
             })
-            .navigationDestination(isPresented: viewStore.binding(
-                get: \.isSettingForReady,
-                send: { .setNavigation(isActive: $0) }), destination: {
-                IfLetStore(
-                    self.store.scope(state: \.bookReader, action: \.bookReader)
-                ) {
-                    BookReaderView(store: $0)
-                } else: {
-                    ProgressView()
-                }
+            .onAppear(perform: {
+                viewStore.send(.onAppear)
             })
             .alert(store: self.store.scope(state: \.$alert, action: \.alert))
             .padding(10)
