@@ -30,25 +30,4 @@ final class BooksListFeatureTests: XCTestCase {
             state.isLoading = false
         }
     }
-
-    func testNavigateBookDetailButtonTapped() async {
-        store.exhaustivity = .off
-        var book: Book! = self.books!.results[0]
-        await store.send(.onAppear)
-        await store.skipReceivedActions()
-        await store.send(.path(.push(id: 0, state: .bookDetail(BookDetailFeature.State(book: book)))))
-        store.assert { state in
-            state.path[id: 0] = .bookDetail(BookDetailFeature.State(book: book))
-        }
-    }
-
-    func testReadButtonTapped() async {
-        let book: Book! = self.books!.results[0]
-        await store.send(.path(.push(id: 0, state: .bookDetail(BookDetailFeature.State(book: book))))) { state in
-            state.path[id: 0] = .bookDetail(BookDetailFeature.State(book: book))
-        }
-        await store.send(.path(.element(id: 0, action: .bookDetail(.readButtonTapped(Data()))))) { state in
-            state.path[id: 1] = .bookReader(BookReaderFeature.State(bookContent: Data()))
-        }
-    }
 }

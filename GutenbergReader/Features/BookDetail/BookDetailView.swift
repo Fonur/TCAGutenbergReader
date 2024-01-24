@@ -87,9 +87,7 @@ struct BookDetailView: View {
                 }
                 Spacer()
                 HStack(alignment:.center) {
-                    Button {
-                        viewStore.send(.readButtonTapped(viewStore.bookContent ?? Data()))
-                    } label: {
+                    NavigationLink(state: HomeFeature.Path.State.bookReader(BookReaderFeature.State(bookContent: viewStore.bookContent ?? Data()))) {
                         HStack {
                             Text("Read")
                             Image(systemName: "book")
@@ -102,6 +100,7 @@ struct BookDetailView: View {
                         }
                     }
                     .disabled(!viewStore.isDownloadedBook)
+
                     Spacer()
                     Button {
                         viewStore.send(.downloadButtonTapped)

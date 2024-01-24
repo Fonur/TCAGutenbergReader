@@ -107,10 +107,10 @@
             filePath = "GutenbergReader/Features/BookList/BooksListFeature.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "body"
-            landmarkType = "24">
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "Action"
+            landmarkType = "13">
             <Locations>
                <Location
                   uuid = "D5FBAA24-E414-4B18-AE0A-9F84D5BFCE01 - 30c4f9977db6dff6"
@@ -155,26 +155,10 @@
             filePath = "GutenbergReader/Features/BookList/BooksListFeature.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D6BC3BEF-6EB8-43B7-AA8C-AEB1CFE20D1F"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GutenbergReader/Features/BookList/BooksListFeature.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "body"
-            landmarkType = "24">
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "Action"
+            landmarkType = "13">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -253,6 +237,22 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "99"
             endingLineNumber = "99">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "38CD79F7-224C-4C16-8875-59693F25C8C4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GutenbergReader/Features/Settings/SettingsFeatureView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

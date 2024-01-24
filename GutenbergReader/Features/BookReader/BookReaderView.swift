@@ -21,11 +21,12 @@ struct BookReaderView: View {
                         viewStore.send(.loadText)
                     }
             }
+            .toolbar(.hidden, for: .tabBar)
             .toolbar(content: {
                 ToolbarItem(placement: .bottomBar) {
                     HStack(content: {
                         Button("", systemImage: "chevron.backward") {
-                            viewStore.send(.backwardButtonTapped)
+                            viewStore.send(.backwardButtonTapped )
                         }
                         Spacer()
                         Text("\(viewStore.page)")
