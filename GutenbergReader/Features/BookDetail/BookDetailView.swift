@@ -87,7 +87,7 @@ struct BookDetailView: View {
                 }
                 Spacer()
                 HStack(alignment:.center) {
-                    NavigationLink(state: HomeFeature.Path.State.bookReader(BookReaderFeature.State(bookContent: viewStore.bookContent ?? Data()))) {
+                    NavigationLink(state: Path.State.bookReader(BookReaderFeature.State(bookContent: viewStore.bookContent ?? Data()))) {
                         HStack {
                             Text("Read")
                             Image(systemName: "book")

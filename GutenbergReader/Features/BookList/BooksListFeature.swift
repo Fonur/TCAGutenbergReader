@@ -15,7 +15,6 @@ struct BooksListFeature {
         var parameters: String? = nil
         var isLoading: Bool = true
         var books: [Book] = []
-        var bookmarkIDs: [Int] = []
     }
 
     enum Action {
@@ -29,14 +28,20 @@ struct BooksListFeature {
     }
 
     @Dependency(\.bookList) var booksList
+    @Dependency(\.downloadedBookList) var downloadedBookList
 
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
             case .onAppear:
-                let parameters = state.parameters
-                return .run { send in
-                    try await send(.booksListedResponse(self.booksList.fetch(parameters)))
+                if let parameters = state.parameters {
+                    return .run { send in
+                        try await send(.booksListedResponse(self.booksList.fetch(parameters)))
+                    }
+                } else {
+                    return .run { send in
+                        try await send(.booksListedResponse(self.downloadedBookList.fetch()))
+                    }
                 }
             case let .booksListedResponse(books):
                 state.books = books.results
@@ -48,6 +53,5 @@ struct BooksListFeature {
                 return .none
             }
         }
-
     }
 }

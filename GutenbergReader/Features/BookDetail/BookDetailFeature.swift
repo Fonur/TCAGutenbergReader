@@ -39,6 +39,7 @@ struct BookDetailFeature {
     private enum CancelID { case load }
 
     @Dependency(\.bookDetail) var bookDetail
+    @Dependency(\.downloadedBookList) var downloadedBookList
 
     var body: some ReducerOf<Self> {
         Reduce { state, action in
@@ -59,7 +60,10 @@ struct BookDetailFeature {
                 if state.bookContent != nil {
                     //state.alert = .downloadMessage()
                 }
+                let book = state.book
+
                 return .run { send in
+                    try await downloadedBookList.appendAndSave(book)
                     try await send(.isDownloadedBook(bookDetail.loadBook(id)))
                 }
             case .downloadButtonTapped:

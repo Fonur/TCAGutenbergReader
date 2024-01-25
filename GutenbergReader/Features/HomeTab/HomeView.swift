@@ -79,14 +79,14 @@ struct HomeView: View {
             switch $0 {
             case .bookDetail:
                 CaseLet(
-                    \HomeFeature.Path.State.bookDetail,
-                     action: HomeFeature.Path.Action.bookDetail,
+                    \Path.State.bookDetail,
+                     action: Path.Action.bookDetail,
                      then: BookDetailView.init(store:)
                 )
             case .bookReader:
                 CaseLet(
-                    \HomeFeature.Path.State.bookReader,
-                     action: HomeFeature.Path.Action.bookReader,
+                    \Path.State.bookReader,
+                     action: Path.Action.bookReader,
                      then: BookReaderView.init(store:)
                 )
             }

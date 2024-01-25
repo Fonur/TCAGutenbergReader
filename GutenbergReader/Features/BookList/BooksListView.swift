@@ -21,7 +21,7 @@ struct BooksListView: View {
                         .font(.largeTitle)
                 } else {
                     List(viewStore.state.books, id: \.id) { book in
-                        NavigationLink(state: HomeFeature.Path.State.bookDetail(BookDetailFeature.State(book: book))) {
+                        NavigationLink(state: Path.State.bookDetail(BookDetailFeature.State(book: book))) {
                             Label(book.title, systemImage: "book.closed.fill")
                         }
                     }

@@ -10,29 +10,6 @@ import ComposableArchitecture
 
 @Reducer
 struct SearchFeature {
-    
-    @Reducer
-    struct Path {
-        enum State: Codable, Equatable, Hashable {
-            case bookDetail(BookDetailFeature.State)
-            case bookReader(BookReaderFeature.State)
-        }
-
-        enum Action {
-            case bookDetail(BookDetailFeature.Action)
-            case bookReader(BookReaderFeature.Action)
-        }
-
-        var body: some ReducerOf<Self> {
-            Scope(state: \.bookDetail, action: \.bookDetail) {
-                BookDetailFeature()
-            }
-            Scope(state: \.bookReader, action: \.bookReader) {
-                BookReaderFeature()
-            }
-        }
-    }
-
     struct State: Equatable {
         var text: String = ""
         var books: [Book]

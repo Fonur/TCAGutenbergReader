@@ -47,14 +47,14 @@ struct SearchFeatureView: View {
             switch $0 {
             case .bookDetail:
                 CaseLet(
-                    \SearchFeature.Path.State.bookDetail,
-                     action: SearchFeature.Path.Action.bookDetail,
+                    \Path.State.bookDetail,
+                     action: Path.Action.bookDetail,
                      then: BookDetailView.init(store:)
                 )
             case .bookReader:
                 CaseLet(
-                    \SearchFeature.Path.State.bookReader,
-                     action: SearchFeature.Path.Action.bookReader,
+                    \Path.State.bookReader,
+                     action: Path.Action.bookReader,
                      then: BookReaderView.init(store:)
                 )
             }
