@@ -62,11 +62,13 @@ struct HomeView: View {
                         .onAppear {
                             viewStore.send(.recentlyAddedTab(.onAppear))
                         }
+                        .navigationTitle(Text("Recently Added"))
                     BooksListView(store: store.scope(state: \.downloadsTab, action: \.downloadsTab))
                         .tag(AppTab.downloads)
                         .onAppear {
                             viewStore.send(.downloadsTab(.onAppear))
                         }
+                        .navigationTitle(Text("Downloads"))
                 }
                 .tabViewStyle(.page(indexDisplayMode: .never))
                 .toolbar {

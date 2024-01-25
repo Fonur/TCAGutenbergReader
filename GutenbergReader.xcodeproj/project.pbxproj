@@ -42,6 +42,8 @@
 		49ED96432B5721EE0064736F /* BookReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED96422B5721EE0064736F /* BookReaderView.swift */; };
 		49ED96452B5722490064736F /* BookReaderFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED96442B5722490064736F /* BookReaderFeatureTests.swift */; };
 		49F10ADB2B596B4500B23CB1 /* BookmarkAppStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F10ADA2B596B4500B23CB1 /* BookmarkAppStorage.swift */; };
+		49F2DC472B624DC900EF2654 /* BookCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F2DC462B624DC900EF2654 /* BookCardView.swift */; };
+		49F2DC492B626CD100EF2654 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49F2DC482B626CD100EF2654 /* Launch Screen.storyboard */; };
 		49F36C952B5C5CCD00A4A809 /* SearchFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F36C942B5C5CCD00A4A809 /* SearchFeatureTests.swift */; };
 		49F36C982B5C614500A4A809 /* SearchFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F36C972B5C614500A4A809 /* SearchFeature.swift */; };
 		49F58C5B2B5CFEDD004BF7FC /* SearchFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F58C5A2B5CFEDD004BF7FC /* SearchFeatureView.swift */; };
@@ -102,6 +104,8 @@
 		49ED96422B5721EE0064736F /* BookReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReaderView.swift; sourceTree = "<group>"; };
 		49ED96442B5722490064736F /* BookReaderFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReaderFeatureTests.swift; sourceTree = "<group>"; };
 		49F10ADA2B596B4500B23CB1 /* BookmarkAppStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkAppStorage.swift; sourceTree = "<group>"; };
+		49F2DC462B624DC900EF2654 /* BookCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCardView.swift; sourceTree = "<group>"; };
+		49F2DC482B626CD100EF2654 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		49F36C942B5C5CCD00A4A809 /* SearchFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFeatureTests.swift; sourceTree = "<group>"; };
 		49F36C972B5C614500A4A809 /* SearchFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFeature.swift; sourceTree = "<group>"; };
 		49F58C5A2B5CFEDD004BF7FC /* SearchFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFeatureView.swift; sourceTree = "<group>"; };
@@ -137,6 +141,8 @@
 			children = (
 				49071ADE2B57E30900CA3F35 /* WebView.swift */,
 				493F6D752B5DA3A2007F717C /* AboutInfoView.swift */,
+				49F2DC462B624DC900EF2654 /* BookCardView.swift */,
+				49F2DC482B626CD100EF2654 /* Launch Screen.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -419,6 +425,7 @@
 				494B59472B5571B800C170F3 /* Preview Assets.xcassets in Resources */,
 				49F58C5D2B5D0A36004BF7FC /* CormorantGaramond-Regular.ttf in Resources */,
 				49F58C5F2B5D0B06004BF7FC /* CormorantGaramond-Bold.ttf in Resources */,
+				49F2DC492B626CD100EF2654 /* Launch Screen.storyboard in Resources */,
 				494B59442B5571B800C170F3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,6 +474,7 @@
 				49C016252B56A7D700090C31 /* DownloadManager.swift in Sources */,
 				49ED963E2B57137F0064736F /* AlertState+Extensions.swift in Sources */,
 				49D4D8762B566B26003BA161 /* BookDetailView.swift in Sources */,
+				49F2DC472B624DC900EF2654 /* BookCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -631,8 +639,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -665,8 +674,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
