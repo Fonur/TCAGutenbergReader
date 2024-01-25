@@ -20,11 +20,7 @@ struct BooksListFeature {
     enum Action {
         case onAppear
         case booksListedResponse(Books)
-        case delegate(Delegate)
         case selectedButtonTapped(Book)
-        enum Delegate: Equatable {
-            case saveBookmark(Int, Bool)
-        }
     }
 
     @Dependency(\.bookList) var booksList
@@ -46,8 +42,6 @@ struct BooksListFeature {
             case let .booksListedResponse(books):
                 state.books = books.results
                 state.isLoading = false
-                return .none
-            case .delegate(_):
                 return .none
             case .selectedButtonTapped(_):
                 return .none

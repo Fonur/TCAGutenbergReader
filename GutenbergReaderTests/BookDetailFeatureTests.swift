@@ -97,17 +97,6 @@ final class BookDetailFeatureTests: XCTestCase {
         }
     }
 
-    func testBookmarkBookTapped() async {
-        store.exhaustivity = .off
-        await store.send(.bookmarkButtonTapped) { state in
-            state.book.isBookmarked = true
-        }
-        await store.skipReceivedActions()
-        await store.send(.bookmarkButtonTapped) { state in
-            state.book.isBookmarked = false
-        }
-    }
-
     func testLoadBook() async {
         store.exhaustivity = .off
         await store.send(.onAppear)

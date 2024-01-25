@@ -20,11 +20,7 @@ struct SearchFeature {
         case searchTextChanged(String)
         case searchedBookList(Books?)
         case selectedBook(Book)
-        case delegate(Delegate)
         case path(StackAction<Path.State, Path.Action>)
-        enum Delegate {
-            case saveBookmark(Int, Bool)
-        }
     }
 
     @Dependency(\.bookList) var bookList
@@ -39,15 +35,11 @@ struct SearchFeature {
                 }
             case let .searchedBookList(bookList):
                 state.books = bookList!.results
-                return .none
-            case let .path(.element(id: _, action: .bookDetail(.delegate(.saveBookmark(bookmarkID, bookmark))))):
-                return .send(.delegate(.saveBookmark(bookmarkID, bookmark)))            
+                return .none 
             case let .path(.element(id: _, action: .bookDetail(.readButtonTapped(data)))):
                 state.path.append(.bookReader(BookReaderFeature.State(bookContent: data)))
                 return .none
             case .path(_):
-                return .none
-            case .delegate(_):
                 return .none
             case let .selectedBook(book):
                 state.path.append(.bookDetail(BookDetailFeature.State(book: book)))

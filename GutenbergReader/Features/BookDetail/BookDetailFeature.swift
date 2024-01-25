@@ -22,18 +22,13 @@ struct BookDetailFeature {
 
     enum Action {
         case alert(PresentationAction<Alert>)
-        case bookmarkButtonTapped
         case bookReader(BookReaderFeature.Action)
-        case delegate(Delegate)
         case downloadAndSaveResponse(Data?)
         case downloadButtonTapped
         case readButtonTapped(Data)
         case onAppear
         case isDownloadedBook(Data?)
         enum Alert: Equatable { case downloadMessage }
-        enum Delegate: Equatable {
-            case saveBookmark(Int, Bool)
-        }
     }
 
     private enum CancelID { case load }
@@ -47,11 +42,6 @@ struct BookDetailFeature {
             case .alert(.presented(.downloadMessage)):
                 return .none
             case .alert:
-                return .none
-            case .bookmarkButtonTapped:
-                state.book.isBookmarked.toggle()
-                return .send(.delegate(.saveBookmark(state.book.id, state.book.isBookmarked)))
-            case .delegate(_):
                 return .none
             case let .downloadAndSaveResponse(data):
                 let id = String(state.book.id)

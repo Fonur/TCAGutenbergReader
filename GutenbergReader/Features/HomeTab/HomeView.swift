@@ -37,11 +37,11 @@ struct SegmentedView: View {
                 }
             }
             Button {
-                viewStore.send(.changeTab(.bookmarks))
+                viewStore.send(.changeTab(.downloads))
             } label: {
                 VStack {
-                    Text("Bookmarks")
-                    buttonUnderline(.bookmarks)
+                    Text("Downloads")
+                    buttonUnderline(.downloads)
                 }
             }
 
@@ -62,10 +62,10 @@ struct HomeView: View {
                         .onAppear {
                             viewStore.send(.recentlyAddedTab(.onAppear))
                         }
-                    BooksListView(store: store.scope(state: \.bookmarksTab, action: \.bookmarksTab))
-                        .tag(AppTab.bookmarks)
+                    BooksListView(store: store.scope(state: \.downloadsTab, action: \.downloadsTab))
+                        .tag(AppTab.downloads)
                         .onAppear {
-                            viewStore.send(.bookmarksTab(.onAppear))
+                            viewStore.send(.downloadsTab(.onAppear))
                         }
                 }
                 .tabViewStyle(.page(indexDisplayMode: .never))

@@ -127,20 +127,6 @@ struct BookDetailView: View {
                 viewStore.send(.onAppear)
             })
             .padding(10)
-            .toolbar(content: {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Group {
-                        if viewStore.book.isBookmarked {
-                            Image(systemName: "bookmark.fill")
-                        } else {
-                            Image(systemName: "bookmark")
-                        }
-                    }
-                    .onTapGesture(perform: {
-                        viewStore.send(.bookmarkButtonTapped)
-                    })
-                }
-            })
         }
     }
 }

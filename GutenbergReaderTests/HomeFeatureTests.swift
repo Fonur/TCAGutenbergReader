@@ -19,8 +19,8 @@ final class HomeFeatureTests: XCTestCase {
     }
 
     func testChangeTab() async {
-        await store.send(.changeTab(.bookmarks)) { state in
-            state.appTab = .bookmarks
+        await store.send(.changeTab(.downloads)) { state in
+            state.appTab = .downloads
         }
 
         await store.send(.changeTab(.recentlyAdded)) { state in

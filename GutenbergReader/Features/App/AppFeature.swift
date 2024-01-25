@@ -14,7 +14,6 @@ struct AppFeature {
         var homeTab = HomeFeature.State()
         var settingsTab = SettingsFeature.State()
         var searchTab = SearchFeature.State(books: [])
-        var bookmarkIDs: [Int] = []
     }
 
     enum Action {
@@ -38,17 +37,6 @@ struct AppFeature {
         }
         Reduce { state, action in
             switch action {
-            case let .searchTab(.delegate(.saveBookmark(bookmarkID, bookmark))):
-                bookmark == true
-                    ? state.bookmarkIDs.append(bookmarkID)
-                    : state.bookmarkIDs.removeAll(where: { currentBookmark in
-                        currentBookmark == bookmarkID
-                    })
-                let bookmarkIDs = state.bookmarkIDs
-                return .run { send in
-                    try await send(.saveUserDefaults(appStorage.saveBookmarkIds(bookmarkIDs)))
-                }
-
             case .saveUserDefaults():
                 return .none
             case .searchTab(_):

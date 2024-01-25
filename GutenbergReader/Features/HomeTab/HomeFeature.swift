@@ -10,7 +10,7 @@ import ComposableArchitecture
 
 enum AppTab {
     case recentlyAdded
-    case bookmarks
+    case downloads
 }
 
 @Reducer
@@ -19,21 +19,21 @@ struct HomeFeature {
         var path = StackState<Path.State>()
         var appTab: AppTab = .recentlyAdded
         var recentlyAddedTab = BooksListFeature.State(parameters: "?sort=descending")
-        var bookmarksTab = BooksListFeature.State()
+        var downloadsTab = BooksListFeature.State()
     }
 
     enum Action {
         case changeTab(AppTab)
         case path(StackAction<Path.State, Path.Action>)
         case recentlyAddedTab(BooksListFeature.Action)
-        case bookmarksTab(BooksListFeature.Action)
+        case downloadsTab(BooksListFeature.Action)
     }
 
     var body: some ReducerOf<Self> {
         Scope(state: \.recentlyAddedTab, action: \.recentlyAddedTab) {
             BooksListFeature()
         }
-        Scope(state: \.bookmarksTab, action: \.bookmarksTab) {
+        Scope(state: \.downloadsTab, action: \.downloadsTab) {
             BooksListFeature()
         }
         Reduce { state, action in
@@ -45,7 +45,7 @@ struct HomeFeature {
                 return .none
             case .recentlyAddedTab(_):
                 return .none
-            case .bookmarksTab(_):
+            case .downloadsTab(_):
                 return .none
             }
         }

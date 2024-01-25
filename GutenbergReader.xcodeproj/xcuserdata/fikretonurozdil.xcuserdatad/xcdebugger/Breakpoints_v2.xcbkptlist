@@ -235,8 +235,8 @@
             filePath = "GutenbergReader/Features/BookDetail/BookDetailFeature.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "BookDetailFeature"
             landmarkType = "14">
          </BreakpointContent>
