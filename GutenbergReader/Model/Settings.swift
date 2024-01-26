@@ -8,5 +8,8 @@
 import Foundation
 
 struct Settings: Equatable, Codable {
+    static func == (lhs: Settings, rhs: Settings) -> Bool {
+        lhs.isDarkMode == rhs.isDarkMode
+    }
     var isDarkMode: Bool
 }

@@ -9,10 +9,19 @@ import SwiftUI
 
 struct AboutInfoView: View {
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .center) {
+            Image("launch")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 200)
+                .accessibilityLabel(Text("Gutenberg Reader"))
+                .padding(.bottom)
+
             Text("About Gutenberg Reader")
+                .multilineTextAlignment(.center)
                 .font(.largeTitle)
                 .padding(.bottom)
+
             Text("""
                 Gutenberg Reader is an independent mobile application designed to make reading classic literature easy and enjoyable. Our app offers a simple interface for discovering and enjoying timeless works from various genres. Features include browsing categories, detailed book information, offline reading, and customizable reading settings, including a dark/light mode.
                 """) + Text("\n\nPlease note: ").bold() + Text(

@@ -31,6 +31,7 @@ struct BooksListView: View {
                                 NavigationLink(state: Path.State.bookDetail(BookDetailFeature.State(book: book))) {
                                     BookCardView(width: 180, height: 200, bookTitle: book.title, imageURL: URL(string:book.formats.imageJPEG ?? ""))
                                 }
+                                .buttonStyle(.plain)
                             }
                         }
                         .padding(.horizontal)
@@ -38,7 +39,6 @@ struct BooksListView: View {
                 }
             })
         }
-        .navigationBarTitleDisplayMode(.large)
 
     }
 }

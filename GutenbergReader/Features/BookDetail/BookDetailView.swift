@@ -126,7 +126,6 @@ struct BookDetailView: View {
                     .padding()
                 })
             }
-
             .onAppear(perform: {
                 viewStore.send(.onAppear)
             })

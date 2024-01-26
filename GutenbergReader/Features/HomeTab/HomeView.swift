@@ -77,6 +77,8 @@ struct HomeView: View {
                     }
                 }
             }
+            .navigationBarTitleDisplayMode(.large)
+
         } destination: {
             switch $0 {
             case .bookDetail:
