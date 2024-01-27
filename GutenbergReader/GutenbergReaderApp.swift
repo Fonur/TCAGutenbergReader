@@ -9,8 +9,19 @@ import SwiftUI
 import ComposableArchitecture
 @main
 struct GutenbergReaderApp: App {
-    @AppStorage("settings") var settings: Settings? = nil
+    @AppStorage("settings") var settings: Settings = Settings(themeMode: .defaultTheme)
 
+    var appearanceSwitch: ColorScheme? {
+        if settings.themeMode == .lightTheme {
+            return .light
+        }
+        else if settings.themeMode == .darkTheme {
+            return .dark
+        }
+        else {
+            return .none
+        }
+    }
     static let store = Store(initialState: AppFeature.State()) {
         AppFeature()
             ._printChanges()
@@ -19,7 +30,7 @@ struct GutenbergReaderApp: App {
     var body: some Scene {
         WindowGroup {
             AppFeatureView(store: GutenbergReaderApp.store)
-                .environment(\.colorScheme, settings?.isDarkMode ?? false ? .dark : .light)
+                .preferredColorScheme(appearanceSwitch)
         }
     }
 }

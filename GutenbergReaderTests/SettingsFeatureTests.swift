@@ -20,26 +20,32 @@ final class SettingsFeatureTests: XCTestCase {
 
     func testToggleThemeMode() async {
         store.exhaustivity = .off
-        await self.store.send(.toggleThemeModeTapped(true)) { state in
-            state.isDarkMode = true
+        await self.store.send(.toggleThemeModeTapped(.darkTheme)) { state in
+            state.themeMode = .darkTheme
         }
         await self.store.skipReceivedActions()
-        await self.store.send(.toggleThemeModeTapped(false)) { state in
-            state.isDarkMode = false
+
+        await self.store.send(.toggleThemeModeTapped(.lightTheme)) { state in
+            state.themeMode = .lightTheme
+        }
+        await self.store.skipReceivedActions()
+
+        await self.store.send(.toggleThemeModeTapped(.defaultTheme)) { state in
+            state.themeMode = .defaultTheme
         }
         await self.store.skipReceivedActions()
     }
 
     func testSaveSettings() async {
         store.exhaustivity = .off
-        await self.store.send(.toggleThemeModeTapped(true)) { state in
-            state.isDarkMode = true
+        await self.store.send(.toggleThemeModeTapped(.darkTheme)) { state in
+            state.themeMode = .darkTheme
         }
 
         await self.store.receive(\.saveSettings) { _ in }
 
-        await self.store.send(.toggleThemeModeTapped(false)) { state in
-            state.isDarkMode = false
+        await self.store.send(.toggleThemeModeTapped(.lightTheme)) { state in
+            state.themeMode = .lightTheme
         }
 
         await self.store.receive(\.saveSettings) { _ in }
@@ -51,7 +57,7 @@ final class SettingsFeatureTests: XCTestCase {
         await self.store.receive(\.loadSettings)
 
         self.store.assert { state in
-            state.isDarkMode = true
+            state.themeMode = .darkTheme
         }
     }
 

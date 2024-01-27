@@ -17,23 +17,21 @@ extension SettingsAppStorage: DependencyKey {
     static let liveValue = Self(
         loadSettings: {
             let userDefaults = UserDefaults.standard
-            if let settingsData = userDefaults.value(forKey: "settings") as? Data {
-                let settings = try JSONDecoder().decode(Settings.self, from: settingsData)
+            if let settingsString = userDefaults.string(forKey: "settings"),
+               let settings = Settings(rawValue: settingsString) {
                 return settings
             }
-            return Settings(isDarkMode: false)
+            return Settings(themeMode: .defaultTheme)
         },
         saveSettings: { settings in
-            let userDefaults = UserDefaults.standard
-            if let settingsData = try? JSONEncoder().encode(settings) {
-                userDefaults.set(settingsData, forKey: "settings")
-            }
+            let settingsString = settings.rawValue
+            UserDefaults.standard.set(settingsString, forKey: "settings")
         }
     )
 
     static let testValue = Self(
         loadSettings: {
-            return Settings(isDarkMode: true)
+            return Settings(themeMode: .darkTheme)
         },
         saveSettings: { settings in
 

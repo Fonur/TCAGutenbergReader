@@ -16,11 +16,19 @@ struct SettingsFeatureView: View {
         WithViewStore(self.store) { $0 } content: { viewStore in
             Form {
                 Section("Appearance") {
-                    Toggle(isOn: viewStore.binding(get: \.isDarkMode, send: { value in
-                        .toggleThemeModeTapped(value)
+                    Picker(selection: viewStore.binding(get: \.themeMode, send: { value in
+                            .toggleThemeModeTapped(value)
                     })) {
-                        Label("Dark Mode", systemImage: "moon.fill")
+                        Text("System")
+                            .tag(ThemeMode.defaultTheme)
+                        Text("Light")
+                            .tag(ThemeMode.lightTheme)
+                        Text("Dark")
+                            .tag(ThemeMode.darkTheme)
+                    } label: {
+                        Text("Theme")
                     }
+                    .pickerStyle(.segmented)
                 }
 
                 Section("About") {

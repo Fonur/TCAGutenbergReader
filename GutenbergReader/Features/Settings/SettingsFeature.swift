@@ -9,15 +9,17 @@ import Foundation
 import ComposableArchitecture
 import SwiftUI
 
+
+
 @Reducer
 struct SettingsFeature {
     struct State: Equatable {
-        var isDarkMode: Bool = false
+        var themeMode: ThemeMode = .defaultTheme
         var showingAboutInfo = false
     }
 
     enum Action {
-        case toggleThemeModeTapped(Bool)
+        case toggleThemeModeTapped(ThemeMode)
         case loadSettings(Settings)
         case saveSettings
         case onAppear
@@ -29,13 +31,13 @@ struct SettingsFeature {
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
-            case let .toggleThemeModeTapped(isDarkMode):
-                state.isDarkMode = isDarkMode
+            case let .toggleThemeModeTapped(themeMode):
+                state.themeMode = themeMode
                 return .run { send in
                     await send(.saveSettings)
                 }
             case .saveSettings:
-                let settings = Settings(isDarkMode: state.isDarkMode)
+                let settings = Settings(themeMode: state.themeMode)
                 return .run { send in
                     try await settingsAppStorage.saveSettings(settings)
                 }
@@ -44,7 +46,7 @@ struct SettingsFeature {
                     try await send(.loadSettings(settingsAppStorage.loadSettings()))
                 }
             case let .loadSettings(settings):
-                state.isDarkMode = settings.isDarkMode
+                state.themeMode = settings.themeMode
                 return .none
             case let .showingAboutInfo(isShowing):
                 state.showingAboutInfo = isShowing

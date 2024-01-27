@@ -19,7 +19,7 @@ struct SegmentedView: View {
                 .frame(height: 4)
             if viewStore.appTab == segment {
                 Capsule()
-                    .fill(Color.accentColor)
+                    .fill(Color.black)
                     .frame(height: 4)
                     .matchedGeometryEffect(id: "Tab", in: name)
             }
@@ -36,6 +36,7 @@ struct SegmentedView: View {
                     buttonUnderline(.recentlyAdded)
                 }
             }
+            .frame(minWidth: 150)
             Button {
                 viewStore.send(.changeTab(.downloads))
             } label: {
@@ -44,9 +45,11 @@ struct SegmentedView: View {
                     buttonUnderline(.downloads)
                 }
             }
+            .frame(minWidth: 150)
 
             Spacer()
         }
+        .buttonStyle(.plain)
     }
 }
 

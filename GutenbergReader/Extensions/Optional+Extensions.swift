@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-extension Optional: RawRepresentable where Wrapped: Codable {
+extension Settings: RawRepresentable {
     public var rawValue: String {
         guard let data = try? JSONEncoder().encode(self) else {
             return "{}"
