@@ -7,6 +7,7 @@
 
 import XCTest
 
+@MainActor
 final class GutenbergReaderUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
@@ -19,6 +20,7 @@ final class GutenbergReaderUITestsLaunchTests: XCTestCase {
 
     func testLaunch() throws {
         let app = XCUIApplication()
+        setupSnapshot(app)
         app.launch()
 
         // Insert steps here to perform after app launch but before taking a screenshot,

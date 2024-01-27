@@ -29,6 +29,7 @@
 		49916D9A2B557E6C00DF5C0A /* Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49916D992B557E6C00DF5C0A /* Books.swift */; };
 		49916DA42B55C13E00DF5C0A /* BooksListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49916DA32B55C13E00DF5C0A /* BooksListView.swift */; };
 		4997592B2B64F2D1005EADC6 /* GutenbergReaderHomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4997592A2B64F2D1005EADC6 /* GutenbergReaderHomeTests.swift */; };
+		4997592F2B64F525005EADC6 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4997592E2B64F525005EADC6 /* SnapshotHelper.swift */; };
 		499C68652B58098000FF4773 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499C68642B58098000FF4773 /* String+Extensions.swift */; };
 		499CA0732B642A3000949D35 /* GutenbergReaderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499CA0722B642A3000949D35 /* GutenbergReaderUITests.swift */; };
 		499CA0752B642A3000949D35 /* GutenbergReaderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499CA0742B642A3000949D35 /* GutenbergReaderUITestsLaunchTests.swift */; };
@@ -102,6 +103,7 @@
 		49916D992B557E6C00DF5C0A /* Books.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Books.swift; sourceTree = "<group>"; };
 		49916DA32B55C13E00DF5C0A /* BooksListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListView.swift; sourceTree = "<group>"; };
 		4997592A2B64F2D1005EADC6 /* GutenbergReaderHomeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GutenbergReaderHomeTests.swift; sourceTree = "<group>"; };
+		4997592E2B64F525005EADC6 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		499C68642B58098000FF4773 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		499CA0702B642A3000949D35 /* GutenbergReaderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GutenbergReaderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		499CA0722B642A3000949D35 /* GutenbergReaderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GutenbergReaderUITests.swift; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 		499CA0712B642A3000949D35 /* GutenbergReaderUITests */ = {
 			isa = PBXGroup;
 			children = (
+				4997592E2B64F525005EADC6 /* SnapshotHelper.swift */,
 				499CA0722B642A3000949D35 /* GutenbergReaderUITests.swift */,
 				499CA0742B642A3000949D35 /* GutenbergReaderUITestsLaunchTests.swift */,
 				4997592A2B64F2D1005EADC6 /* GutenbergReaderHomeTests.swift */,
@@ -568,6 +571,7 @@
 				4997592B2B64F2D1005EADC6 /* GutenbergReaderHomeTests.swift in Sources */,
 				499CA0732B642A3000949D35 /* GutenbergReaderUITests.swift in Sources */,
 				499CA0752B642A3000949D35 /* GutenbergReaderUITestsLaunchTests.swift in Sources */,
+				4997592F2B64F525005EADC6 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
