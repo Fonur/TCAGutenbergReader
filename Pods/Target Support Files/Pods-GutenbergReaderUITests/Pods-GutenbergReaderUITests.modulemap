@@ -1,0 +1,6 @@
+framework module Pods_GutenbergReaderUITests {
+  umbrella header "Pods-GutenbergReaderUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -60,8 +60,7 @@ struct DetailBottomView: View {
                 HStack {
                     viewStore.isDownloadedBook ? Text("Downloaded") : Text("Download")
                     viewStore.isDownloading ?
-                    AnyView(Image(systemName: "arrow.down.circle.dotted")
-                        .symbolEffect(.variableColor.iterative, options: .repeating.speed(0.05)))
+                    downloadingButton()
                     : AnyView(Image(systemName: "arrow.down.circle.dotted"))
                 }
                 .font(.title3)
@@ -76,7 +75,19 @@ struct DetailBottomView: View {
             .padding(.trailing)
         }
     }
+
+    @MainActor
+    func downloadingButton() -> AnyView {
+        if #available(iOS 17, *) {
+            AnyView(Image(systemName: "arrow.down.circle.dotted")
+                .symbolEffect(.variableColor.iterative, options: .repeating.speed(0.05)))
+        } else {
+            AnyView(Image(systemName: "arrow.down.circle.dotted"))
+        }
+    }
 }
+
+
 
 struct BookInfoView: View {
     let viewStore: ViewStore<BookDetailFeature.State, BookDetailFeature.Action>

@@ -253,6 +253,21 @@
                   endingLineNumber = "14"
                   offsetFromSymbolStart = "452">
                </Location>
+               <Location
+                  uuid = "0905FF1E-E2B7-48EB-A683-C8472E8EB114 - 17a427d5303b8ac3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GutenbergReader.Settings.rawValue.getter : Swift.String"
+                  moduleName = "GutenbergReader"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fikretonurozdil/Documents/GitHub/GutenbergReader/GutenbergReader/Extensions/Optional+Extensions.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "517">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>

@@ -1,0 +1,9 @@
+${PODS_ROOT}/Target Support Files/Pods-GutenbergReader/Pods-GutenbergReader-frameworks.sh
+${BUILT_PRODUCTS_DIR}/AEXML/AEXML.framework
+${BUILT_PRODUCTS_DIR}/FolioReaderKit/FolioReaderKit.framework
+${BUILT_PRODUCTS_DIR}/FontBlaster/FontBlaster.framework
+${BUILT_PRODUCTS_DIR}/MenuItemKit/MenuItemKit.framework
+${BUILT_PRODUCTS_DIR}/Realm/Realm.framework
+${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework
+${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework
+${BUILT_PRODUCTS_DIR}/ZFDragableModalTransition/ZFDragableModalTransition.framework

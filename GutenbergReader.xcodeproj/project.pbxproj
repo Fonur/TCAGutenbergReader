@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1966AF516F6FED1AE0521846 /* Pods_GutenbergReaderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529AAE3BF9F1843788518B10 /* Pods_GutenbergReaderTests.framework */; };
 		49071ADF2B57E30900CA3F35 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49071ADE2B57E30900CA3F35 /* WebView.swift */; };
 		493F6D732B5D7E94007F717C /* SettingsFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493F6D722B5D7E94007F717C /* SettingsFeatureView.swift */; };
 		493F6D762B5DA3A2007F717C /* AboutInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493F6D752B5DA3A2007F717C /* AboutInfoView.swift */; };
@@ -58,6 +59,8 @@
 		49F58C642B5D18E6004BF7FC /* SettingsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F58C632B5D18E6004BF7FC /* SettingsFeature.swift */; };
 		49F58C662B5D1B90004BF7FC /* SettingsAppStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F58C652B5D1B90004BF7FC /* SettingsAppStorage.swift */; };
 		49F58C682B5D1BE7004BF7FC /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F58C672B5D1BE7004BF7FC /* Settings.swift */; };
+		4C6C72FBC6EBE2C9D8CE8064 /* Pods_GutenbergReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7702AFBBA57B95A839F4F1F1 /* Pods_GutenbergReader.framework */; };
+		766332127F1671888FC63EC0 /* Pods_GutenbergReaderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79D381AB45EDFC5AC72312EB /* Pods_GutenbergReaderUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +81,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2632FD49AE7E3E880791F24D /* Pods-GutenbergReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GutenbergReader.release.xcconfig"; path = "Target Support Files/Pods-GutenbergReader/Pods-GutenbergReader.release.xcconfig"; sourceTree = "<group>"; };
+		279B5EF065F006E774DD5A9A /* Pods-GutenbergReaderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GutenbergReaderTests.release.xcconfig"; path = "Target Support Files/Pods-GutenbergReaderTests/Pods-GutenbergReaderTests.release.xcconfig"; sourceTree = "<group>"; };
+		3787D02E3D740F8C4B2433D9 /* Pods-GutenbergReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GutenbergReader.debug.xcconfig"; path = "Target Support Files/Pods-GutenbergReader/Pods-GutenbergReader.debug.xcconfig"; sourceTree = "<group>"; };
+		3ED0E35B3A1798B7F627641B /* Pods-GutenbergReader-GutenbergReaderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GutenbergReader-GutenbergReaderUITests.debug.xcconfig"; path = "Target Support Files/Pods-GutenbergReader-GutenbergReaderUITests/Pods-GutenbergReader-GutenbergReaderUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		49071ADE2B57E30900CA3F35 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		493F6D722B5D7E94007F717C /* SettingsFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFeatureView.swift; sourceTree = "<group>"; };
 		493F6D752B5DA3A2007F717C /* AboutInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutInfoView.swift; sourceTree = "<group>"; };
@@ -133,6 +140,13 @@
 		49F58C632B5D18E6004BF7FC /* SettingsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFeature.swift; sourceTree = "<group>"; };
 		49F58C652B5D1B90004BF7FC /* SettingsAppStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAppStorage.swift; sourceTree = "<group>"; };
 		49F58C672B5D1BE7004BF7FC /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		529AAE3BF9F1843788518B10 /* Pods_GutenbergReaderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GutenbergReaderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		636BCD85876507BD3C80807C /* Pods-GutenbergReaderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GutenbergReaderUITests.release.xcconfig"; path = "Target Support Files/Pods-GutenbergReaderUITests/Pods-GutenbergReaderUITests.release.xcconfig"; sourceTree = "<group>"; };
+		71B1BC481FC7FDDE401294B8 /* Pods-GutenbergReaderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GutenbergReaderTests.debug.xcconfig"; path = "Target Support Files/Pods-GutenbergReaderTests/Pods-GutenbergReaderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		752C114D01EA29CA86D26E72 /* Pods-GutenbergReaderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GutenbergReaderUITests.debug.xcconfig"; path = "Target Support Files/Pods-GutenbergReaderUITests/Pods-GutenbergReaderUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7702AFBBA57B95A839F4F1F1 /* Pods_GutenbergReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GutenbergReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		79D381AB45EDFC5AC72312EB /* Pods_GutenbergReaderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GutenbergReaderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DA762D37015BBC052B038B2 /* Pods-GutenbergReader-GutenbergReaderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GutenbergReader-GutenbergReaderUITests.release.xcconfig"; path = "Target Support Files/Pods-GutenbergReader-GutenbergReaderUITests/Pods-GutenbergReader-GutenbergReaderUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				494B594F2B55728A00C170F3 /* ComposableArchitecture in Frameworks */,
+				4C6C72FBC6EBE2C9D8CE8064 /* Pods_GutenbergReader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +163,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1966AF516F6FED1AE0521846 /* Pods_GutenbergReaderTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +171,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				766332127F1671888FC63EC0 /* Pods_GutenbergReaderUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +196,8 @@
 				494B59592B55749500C170F3 /* GutenbergReaderTests */,
 				499CA0712B642A3000949D35 /* GutenbergReaderUITests */,
 				494B593D2B5571B700C170F3 /* Products */,
+				7DCE94F3C3C036C139CE3202 /* Pods */,
+				9179853D687254AF56268E24 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -374,6 +393,31 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		7DCE94F3C3C036C139CE3202 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3787D02E3D740F8C4B2433D9 /* Pods-GutenbergReader.debug.xcconfig */,
+				2632FD49AE7E3E880791F24D /* Pods-GutenbergReader.release.xcconfig */,
+				3ED0E35B3A1798B7F627641B /* Pods-GutenbergReader-GutenbergReaderUITests.debug.xcconfig */,
+				9DA762D37015BBC052B038B2 /* Pods-GutenbergReader-GutenbergReaderUITests.release.xcconfig */,
+				71B1BC481FC7FDDE401294B8 /* Pods-GutenbergReaderTests.debug.xcconfig */,
+				279B5EF065F006E774DD5A9A /* Pods-GutenbergReaderTests.release.xcconfig */,
+				752C114D01EA29CA86D26E72 /* Pods-GutenbergReaderUITests.debug.xcconfig */,
+				636BCD85876507BD3C80807C /* Pods-GutenbergReaderUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9179853D687254AF56268E24 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7702AFBBA57B95A839F4F1F1 /* Pods_GutenbergReader.framework */,
+				529AAE3BF9F1843788518B10 /* Pods_GutenbergReaderTests.framework */,
+				79D381AB45EDFC5AC72312EB /* Pods_GutenbergReaderUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -381,9 +425,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 494B594A2B5571B800C170F3 /* Build configuration list for PBXNativeTarget "GutenbergReader" */;
 			buildPhases = (
+				7A6625E917A27BE377E35A28 /* [CP] Check Pods Manifest.lock */,
 				494B59382B5571B700C170F3 /* Sources */,
 				494B59392B5571B700C170F3 /* Frameworks */,
 				494B593A2B5571B700C170F3 /* Resources */,
+				43A20BD940922C7EB70BB8D9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -401,9 +447,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 494B595E2B55749500C170F3 /* Build configuration list for PBXNativeTarget "GutenbergReaderTests" */;
 			buildPhases = (
+				D1509651A5A5E633A09BF529 /* [CP] Check Pods Manifest.lock */,
 				494B59542B55749500C170F3 /* Sources */,
 				494B59552B55749500C170F3 /* Frameworks */,
 				494B59562B55749500C170F3 /* Resources */,
+				EB07834E270373A96B3AF194 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -419,9 +467,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 499CA07A2B642A3000949D35 /* Build configuration list for PBXNativeTarget "GutenbergReaderUITests" */;
 			buildPhases = (
+				702BEA6FC01FFEF2C319421C /* [CP] Check Pods Manifest.lock */,
 				499CA06C2B642A3000949D35 /* Sources */,
 				499CA06D2B642A3000949D35 /* Frameworks */,
 				499CA06E2B642A3000949D35 /* Resources */,
+				77BDB0771511EB5DC200F9EC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -507,6 +557,126 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		43A20BD940922C7EB70BB8D9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GutenbergReader/Pods-GutenbergReader-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GutenbergReader/Pods-GutenbergReader-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GutenbergReader/Pods-GutenbergReader-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		702BEA6FC01FFEF2C319421C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GutenbergReaderUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		77BDB0771511EB5DC200F9EC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GutenbergReaderUITests/Pods-GutenbergReaderUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GutenbergReaderUITests/Pods-GutenbergReaderUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GutenbergReaderUITests/Pods-GutenbergReaderUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A6625E917A27BE377E35A28 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GutenbergReader-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1509651A5A5E633A09BF529 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GutenbergReaderTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB07834E270373A96B3AF194 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GutenbergReaderTests/Pods-GutenbergReaderTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GutenbergReaderTests/Pods-GutenbergReaderTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GutenbergReaderTests/Pods-GutenbergReaderTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		494B59382B5571B700C170F3 /* Sources */ = {
@@ -628,7 +798,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -691,7 +861,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -712,6 +882,7 @@
 		};
 		494B594B2B5571B800C170F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3787D02E3D740F8C4B2433D9 /* Pods-GutenbergReader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -720,6 +891,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"GutenbergReader/Preview Content\"";
 				DEVELOPMENT_TEAM = 6FYBSB5TJR;
 				ENABLE_PREVIEWS = YES;
+				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GutenbergReader/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -728,6 +900,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -747,6 +920,7 @@
 		};
 		494B594C2B5571B800C170F3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2632FD49AE7E3E880791F24D /* Pods-GutenbergReader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -755,6 +929,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"GutenbergReader/Preview Content\"";
 				DEVELOPMENT_TEAM = 6FYBSB5TJR;
 				ENABLE_PREVIEWS = YES;
+				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GutenbergReader/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -763,11 +938,13 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fikretozdil.GutenbergReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -782,6 +959,7 @@
 		};
 		494B595F2B55749500C170F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71B1BC481FC7FDDE401294B8 /* Pods-GutenbergReaderTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -789,6 +967,7 @@
 				DEVELOPMENT_TEAM = 6FYBSB5TJR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GutenbergReaderTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fikretozdil.GutenbergReaderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -805,6 +984,7 @@
 		};
 		494B59602B55749500C170F3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 279B5EF065F006E774DD5A9A /* Pods-GutenbergReaderTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -812,6 +992,7 @@
 				DEVELOPMENT_TEAM = 6FYBSB5TJR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GutenbergReaderTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fikretozdil.GutenbergReaderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -828,12 +1009,13 @@
 		};
 		499CA0782B642A3000949D35 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 752C114D01EA29CA86D26E72 /* Pods-GutenbergReaderUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6FYBSB5TJR;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fikretozdil.GutenbergReaderUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -850,12 +1032,13 @@
 		};
 		499CA0792B642A3000949D35 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 636BCD85876507BD3C80807C /* Pods-GutenbergReaderUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6FYBSB5TJR;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fikretozdil.GutenbergReaderUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
