@@ -3,6 +3,7 @@
 # A list of devices you want to take the screenshots from
 devices([
   "iPhone 15 Pro Max",
+  "iPhone SE (2nd generation)"
 ])
 
 languages([
