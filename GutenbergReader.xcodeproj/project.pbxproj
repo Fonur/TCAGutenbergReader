@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1966AF516F6FED1AE0521846 /* Pods_GutenbergReaderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529AAE3BF9F1843788518B10 /* Pods_GutenbergReaderTests.framework */; };
 		49071ADF2B57E30900CA3F35 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49071ADE2B57E30900CA3F35 /* WebView.swift */; };
 		493F6D732B5D7E94007F717C /* SettingsFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493F6D722B5D7E94007F717C /* SettingsFeatureView.swift */; };
 		493F6D762B5DA3A2007F717C /* AboutInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493F6D752B5DA3A2007F717C /* AboutInfoView.swift */; };
@@ -19,6 +18,8 @@
 		494B59622B5576F100C170F3 /* BooksListFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494B59612B5576F100C170F3 /* BooksListFeatureTests.swift */; };
 		494B59642B55795400C170F3 /* BooksListFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494B59632B55795400C170F3 /* BooksListFeature.swift */; };
 		494B59672B557A8800C170F3 /* BooksListClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494B59662B557A8800C170F3 /* BooksListClient.swift */; };
+		495323E52B8BCB2E00F3D5B4 /* BookConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495323E42B8BCB2E00F3D5B4 /* BookConfiguration.swift */; };
+		49597BE92B8C9CDC00EE2CF8 /* ReadingBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49597BE82B8C9CDC00EE2CF8 /* ReadingBookView.swift */; };
 		498060CE2B5A8FA000455CDF /* AppFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498060CD2B5A8FA000455CDF /* AppFeature.swift */; };
 		498060D02B5A8FAC00455CDF /* AppFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498060CF2B5A8FAC00455CDF /* AppFeatureView.swift */; };
 		498060D22B5A975200455CDF /* AppFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498060D12B5A975200455CDF /* AppFeatureTests.swift */; };
@@ -59,8 +60,9 @@
 		49F58C642B5D18E6004BF7FC /* SettingsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F58C632B5D18E6004BF7FC /* SettingsFeature.swift */; };
 		49F58C662B5D1B90004BF7FC /* SettingsAppStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F58C652B5D1B90004BF7FC /* SettingsAppStorage.swift */; };
 		49F58C682B5D1BE7004BF7FC /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F58C672B5D1BE7004BF7FC /* Settings.swift */; };
-		4C6C72FBC6EBE2C9D8CE8064 /* Pods_GutenbergReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7702AFBBA57B95A839F4F1F1 /* Pods_GutenbergReader.framework */; };
-		766332127F1671888FC63EC0 /* Pods_GutenbergReaderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79D381AB45EDFC5AC72312EB /* Pods_GutenbergReaderUITests.framework */; };
+		6DB80FDE71D98EAE412AF730 /* Pods_GutenbergReaderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31B1476EB65059884031892A /* Pods_GutenbergReaderTests.framework */; };
+		B6A1559EF13BA3D92B1932C6 /* Pods_GutenbergReaderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33799940176D8AF2FF90BC01 /* Pods_GutenbergReaderUITests.framework */; };
+		F0746EECE94A55A1B5B00771 /* Pods_GutenbergReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D02BC9F4C1F6404E9C76CF /* Pods_GutenbergReader.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,10 +83,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2632FD49AE7E3E880791F24D /* Pods-GutenbergReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GutenbergReader.release.xcconfig"; path = "Target Support Files/Pods-GutenbergReader/Pods-GutenbergReader.release.xcconfig"; sourceTree = "<group>"; };
-		279B5EF065F006E774DD5A9A /* Pods-GutenbergReaderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GutenbergReaderTests.release.xcconfig"; path = "Target Support Files/Pods-GutenbergReaderTests/Pods-GutenbergReaderTests.release.xcconfig"; sourceTree = "<group>"; };
-		3787D02E3D740F8C4B2433D9 /* Pods-GutenbergReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GutenbergReader.debug.xcconfig"; path = "Target Support Files/Pods-GutenbergReader/Pods-GutenbergReader.debug.xcconfig"; sourceTree = "<group>"; };
-		3ED0E35B3A1798B7F627641B /* Pods-GutenbergReader-GutenbergReaderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GutenbergReader-GutenbergReaderUITests.debug.xcconfig"; path = "Target Support Files/Pods-GutenbergReader-GutenbergReaderUITests/Pods-GutenbergReader-GutenbergReaderUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		31B1476EB65059884031892A /* Pods_GutenbergReaderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GutenbergReaderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		33799940176D8AF2FF90BC01 /* Pods_GutenbergReaderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GutenbergReaderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49071ADE2B57E30900CA3F35 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		493F6D722B5D7E94007F717C /* SettingsFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFeatureView.swift; sourceTree = "<group>"; };
 		493F6D752B5DA3A2007F717C /* AboutInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutInfoView.swift; sourceTree = "<group>"; };
@@ -97,6 +97,8 @@
 		494B59612B5576F100C170F3 /* BooksListFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListFeatureTests.swift; sourceTree = "<group>"; };
 		494B59632B55795400C170F3 /* BooksListFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListFeature.swift; sourceTree = "<group>"; };
 		494B59662B557A8800C170F3 /* BooksListClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListClient.swift; sourceTree = "<group>"; };
+		495323E42B8BCB2E00F3D5B4 /* BookConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookConfiguration.swift; sourceTree = "<group>"; };
+		49597BE82B8C9CDC00EE2CF8 /* ReadingBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingBookView.swift; sourceTree = "<group>"; };
 		4968EDAE2B56F95300FBD3D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4968EDAF2B56FA2B00FBD3D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		498060CD2B5A8FA000455CDF /* AppFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeature.swift; sourceTree = "<group>"; };
@@ -140,13 +142,13 @@
 		49F58C632B5D18E6004BF7FC /* SettingsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFeature.swift; sourceTree = "<group>"; };
 		49F58C652B5D1B90004BF7FC /* SettingsAppStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAppStorage.swift; sourceTree = "<group>"; };
 		49F58C672B5D1BE7004BF7FC /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		529AAE3BF9F1843788518B10 /* Pods_GutenbergReaderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GutenbergReaderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		636BCD85876507BD3C80807C /* Pods-GutenbergReaderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GutenbergReaderUITests.release.xcconfig"; path = "Target Support Files/Pods-GutenbergReaderUITests/Pods-GutenbergReaderUITests.release.xcconfig"; sourceTree = "<group>"; };
-		71B1BC481FC7FDDE401294B8 /* Pods-GutenbergReaderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GutenbergReaderTests.debug.xcconfig"; path = "Target Support Files/Pods-GutenbergReaderTests/Pods-GutenbergReaderTests.debug.xcconfig"; sourceTree = "<group>"; };
-		752C114D01EA29CA86D26E72 /* Pods-GutenbergReaderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GutenbergReaderUITests.debug.xcconfig"; path = "Target Support Files/Pods-GutenbergReaderUITests/Pods-GutenbergReaderUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		7702AFBBA57B95A839F4F1F1 /* Pods_GutenbergReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GutenbergReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		79D381AB45EDFC5AC72312EB /* Pods_GutenbergReaderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GutenbergReaderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9DA762D37015BBC052B038B2 /* Pods-GutenbergReader-GutenbergReaderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GutenbergReader-GutenbergReaderUITests.release.xcconfig"; path = "Target Support Files/Pods-GutenbergReader-GutenbergReaderUITests/Pods-GutenbergReader-GutenbergReaderUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5970E599CC22B3841189DB34 /* Pods-GutenbergReaderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GutenbergReaderTests.release.xcconfig"; path = "Target Support Files/Pods-GutenbergReaderTests/Pods-GutenbergReaderTests.release.xcconfig"; sourceTree = "<group>"; };
+		5FD9FC690311903EBB792C8E /* Pods-GutenbergReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GutenbergReader.debug.xcconfig"; path = "Target Support Files/Pods-GutenbergReader/Pods-GutenbergReader.debug.xcconfig"; sourceTree = "<group>"; };
+		93BF8CCA1A305A9DEE914257 /* Pods-GutenbergReaderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GutenbergReaderTests.debug.xcconfig"; path = "Target Support Files/Pods-GutenbergReaderTests/Pods-GutenbergReaderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A4D02BC9F4C1F6404E9C76CF /* Pods_GutenbergReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GutenbergReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C17786851FFC355FB1499B0A /* Pods-GutenbergReaderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GutenbergReaderUITests.release.xcconfig"; path = "Target Support Files/Pods-GutenbergReaderUITests/Pods-GutenbergReaderUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CE924C71EFBCCA2F629718D1 /* Pods-GutenbergReaderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GutenbergReaderUITests.debug.xcconfig"; path = "Target Support Files/Pods-GutenbergReaderUITests/Pods-GutenbergReaderUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E06D8745CF8745FCC3F97669 /* Pods-GutenbergReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GutenbergReader.release.xcconfig"; path = "Target Support Files/Pods-GutenbergReader/Pods-GutenbergReader.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,7 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				494B594F2B55728A00C170F3 /* ComposableArchitecture in Frameworks */,
-				4C6C72FBC6EBE2C9D8CE8064 /* Pods_GutenbergReader.framework in Frameworks */,
+				F0746EECE94A55A1B5B00771 /* Pods_GutenbergReader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,7 +165,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1966AF516F6FED1AE0521846 /* Pods_GutenbergReaderTests.framework in Frameworks */,
+				6DB80FDE71D98EAE412AF730 /* Pods_GutenbergReaderTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,13 +173,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				766332127F1671888FC63EC0 /* Pods_GutenbergReaderUITests.framework in Frameworks */,
+				B6A1559EF13BA3D92B1932C6 /* Pods_GutenbergReaderUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13B43D3C4ADD57C3CD81CD5C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A4D02BC9F4C1F6404E9C76CF /* Pods_GutenbergReader.framework */,
+				31B1476EB65059884031892A /* Pods_GutenbergReaderTests.framework */,
+				33799940176D8AF2FF90BC01 /* Pods_GutenbergReaderUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		49071ADD2B57E2FB00CA3F35 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +197,7 @@
 				493F6D752B5DA3A2007F717C /* AboutInfoView.swift */,
 				49F2DC462B624DC900EF2654 /* BookCardView.swift */,
 				49F2DC482B626CD100EF2654 /* Launch Screen.storyboard */,
+				49597BE82B8C9CDC00EE2CF8 /* ReadingBookView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -197,7 +210,7 @@
 				499CA0712B642A3000949D35 /* GutenbergReaderUITests */,
 				494B593D2B5571B700C170F3 /* Products */,
 				7DCE94F3C3C036C139CE3202 /* Pods */,
-				9179853D687254AF56268E24 /* Frameworks */,
+				13B43D3C4ADD57C3CD81CD5C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -343,6 +356,7 @@
 			isa = PBXGroup;
 			children = (
 				49C016242B56A7D700090C31 /* DownloadManager.swift */,
+				495323E42B8BCB2E00F3D5B4 /* BookConfiguration.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -396,26 +410,14 @@
 		7DCE94F3C3C036C139CE3202 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3787D02E3D740F8C4B2433D9 /* Pods-GutenbergReader.debug.xcconfig */,
-				2632FD49AE7E3E880791F24D /* Pods-GutenbergReader.release.xcconfig */,
-				3ED0E35B3A1798B7F627641B /* Pods-GutenbergReader-GutenbergReaderUITests.debug.xcconfig */,
-				9DA762D37015BBC052B038B2 /* Pods-GutenbergReader-GutenbergReaderUITests.release.xcconfig */,
-				71B1BC481FC7FDDE401294B8 /* Pods-GutenbergReaderTests.debug.xcconfig */,
-				279B5EF065F006E774DD5A9A /* Pods-GutenbergReaderTests.release.xcconfig */,
-				752C114D01EA29CA86D26E72 /* Pods-GutenbergReaderUITests.debug.xcconfig */,
-				636BCD85876507BD3C80807C /* Pods-GutenbergReaderUITests.release.xcconfig */,
+				5FD9FC690311903EBB792C8E /* Pods-GutenbergReader.debug.xcconfig */,
+				E06D8745CF8745FCC3F97669 /* Pods-GutenbergReader.release.xcconfig */,
+				93BF8CCA1A305A9DEE914257 /* Pods-GutenbergReaderTests.debug.xcconfig */,
+				5970E599CC22B3841189DB34 /* Pods-GutenbergReaderTests.release.xcconfig */,
+				CE924C71EFBCCA2F629718D1 /* Pods-GutenbergReaderUITests.debug.xcconfig */,
+				C17786851FFC355FB1499B0A /* Pods-GutenbergReaderUITests.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		9179853D687254AF56268E24 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				7702AFBBA57B95A839F4F1F1 /* Pods_GutenbergReader.framework */,
-				529AAE3BF9F1843788518B10 /* Pods_GutenbergReaderTests.framework */,
-				79D381AB45EDFC5AC72312EB /* Pods_GutenbergReaderUITests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -425,11 +427,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 494B594A2B5571B800C170F3 /* Build configuration list for PBXNativeTarget "GutenbergReader" */;
 			buildPhases = (
-				7A6625E917A27BE377E35A28 /* [CP] Check Pods Manifest.lock */,
+				C489166000599CEB59E527FA /* [CP] Check Pods Manifest.lock */,
 				494B59382B5571B700C170F3 /* Sources */,
 				494B59392B5571B700C170F3 /* Frameworks */,
 				494B593A2B5571B700C170F3 /* Resources */,
-				43A20BD940922C7EB70BB8D9 /* [CP] Embed Pods Frameworks */,
+				7C9F14F27192FA03CB181495 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -447,11 +449,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 494B595E2B55749500C170F3 /* Build configuration list for PBXNativeTarget "GutenbergReaderTests" */;
 			buildPhases = (
-				D1509651A5A5E633A09BF529 /* [CP] Check Pods Manifest.lock */,
+				F5ADA7CA327A0D64404E6382 /* [CP] Check Pods Manifest.lock */,
 				494B59542B55749500C170F3 /* Sources */,
 				494B59552B55749500C170F3 /* Frameworks */,
 				494B59562B55749500C170F3 /* Resources */,
-				EB07834E270373A96B3AF194 /* [CP] Embed Pods Frameworks */,
+				4CC0F2EFCE6B95DF3B22D0E3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -467,11 +469,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 499CA07A2B642A3000949D35 /* Build configuration list for PBXNativeTarget "GutenbergReaderUITests" */;
 			buildPhases = (
-				702BEA6FC01FFEF2C319421C /* [CP] Check Pods Manifest.lock */,
+				96B03251BA93BE68F010215D /* [CP] Check Pods Manifest.lock */,
 				499CA06C2B642A3000949D35 /* Sources */,
 				499CA06D2B642A3000949D35 /* Frameworks */,
 				499CA06E2B642A3000949D35 /* Resources */,
-				77BDB0771511EB5DC200F9EC /* [CP] Embed Pods Frameworks */,
+				4BA17FE6852D7234BD983BB5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -559,7 +561,41 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		43A20BD940922C7EB70BB8D9 /* [CP] Embed Pods Frameworks */ = {
+		4BA17FE6852D7234BD983BB5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GutenbergReaderUITests/Pods-GutenbergReaderUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GutenbergReaderUITests/Pods-GutenbergReaderUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GutenbergReaderUITests/Pods-GutenbergReaderUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4CC0F2EFCE6B95DF3B22D0E3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GutenbergReaderTests/Pods-GutenbergReaderTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GutenbergReaderTests/Pods-GutenbergReaderTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GutenbergReaderTests/Pods-GutenbergReaderTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C9F14F27192FA03CB181495 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -576,7 +612,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GutenbergReader/Pods-GutenbergReader-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		702BEA6FC01FFEF2C319421C /* [CP] Check Pods Manifest.lock */ = {
+		96B03251BA93BE68F010215D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -598,24 +634,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		77BDB0771511EB5DC200F9EC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GutenbergReaderUITests/Pods-GutenbergReaderUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GutenbergReaderUITests/Pods-GutenbergReaderUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GutenbergReaderUITests/Pods-GutenbergReaderUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7A6625E917A27BE377E35A28 /* [CP] Check Pods Manifest.lock */ = {
+		C489166000599CEB59E527FA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -637,7 +656,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D1509651A5A5E633A09BF529 /* [CP] Check Pods Manifest.lock */ = {
+		F5ADA7CA327A0D64404E6382 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -659,23 +678,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EB07834E270373A96B3AF194 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GutenbergReaderTests/Pods-GutenbergReaderTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GutenbergReaderTests/Pods-GutenbergReaderTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GutenbergReaderTests/Pods-GutenbergReaderTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -692,6 +694,7 @@
 				49F58C642B5D18E6004BF7FC /* SettingsFeature.swift in Sources */,
 				49D4D8742B566ACB003BA161 /* BookDetailFeature.swift in Sources */,
 				49F10ADB2B596B4500B23CB1 /* BookmarkAppStorage.swift in Sources */,
+				495323E52B8BCB2E00F3D5B4 /* BookConfiguration.swift in Sources */,
 				499C68652B58098000FF4773 /* String+Extensions.swift in Sources */,
 				49F36C982B5C614500A4A809 /* SearchFeature.swift in Sources */,
 				49ED96412B5721E10064736F /* BookReaderFeature.swift in Sources */,
@@ -708,6 +711,7 @@
 				49D4D8792B566BE5003BA161 /* MockupBooks.swift in Sources */,
 				493F6D762B5DA3A2007F717C /* AboutInfoView.swift in Sources */,
 				493F6D732B5D7E94007F717C /* SettingsFeatureView.swift in Sources */,
+				49597BE92B8C9CDC00EE2CF8 /* ReadingBookView.swift in Sources */,
 				49F58C682B5D1BE7004BF7FC /* Settings.swift in Sources */,
 				49C016272B56A91700090C31 /* BookDetailClient.swift in Sources */,
 				49916DA42B55C13E00DF5C0A /* BooksListView.swift in Sources */,
@@ -882,7 +886,7 @@
 		};
 		494B594B2B5571B800C170F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3787D02E3D740F8C4B2433D9 /* Pods-GutenbergReader.debug.xcconfig */;
+			baseConfigurationReference = 5FD9FC690311903EBB792C8E /* Pods-GutenbergReader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -920,7 +924,7 @@
 		};
 		494B594C2B5571B800C170F3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2632FD49AE7E3E880791F24D /* Pods-GutenbergReader.release.xcconfig */;
+			baseConfigurationReference = E06D8745CF8745FCC3F97669 /* Pods-GutenbergReader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -959,7 +963,7 @@
 		};
 		494B595F2B55749500C170F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 71B1BC481FC7FDDE401294B8 /* Pods-GutenbergReaderTests.debug.xcconfig */;
+			baseConfigurationReference = 93BF8CCA1A305A9DEE914257 /* Pods-GutenbergReaderTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -984,7 +988,7 @@
 		};
 		494B59602B55749500C170F3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 279B5EF065F006E774DD5A9A /* Pods-GutenbergReaderTests.release.xcconfig */;
+			baseConfigurationReference = 5970E599CC22B3841189DB34 /* Pods-GutenbergReaderTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1009,7 +1013,7 @@
 		};
 		499CA0782B642A3000949D35 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 752C114D01EA29CA86D26E72 /* Pods-GutenbergReaderUITests.debug.xcconfig */;
+			baseConfigurationReference = CE924C71EFBCCA2F629718D1 /* Pods-GutenbergReaderUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1032,7 +1036,7 @@
 		};
 		499CA0792B642A3000949D35 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 636BCD85876507BD3C80807C /* Pods-GutenbergReaderUITests.release.xcconfig */;
+			baseConfigurationReference = C17786851FFC355FB1499B0A /* Pods-GutenbergReaderUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

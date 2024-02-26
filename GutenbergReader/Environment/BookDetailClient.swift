@@ -25,12 +25,12 @@ extension BookDetailClient: DependencyKey {
             let downloadManager = DownloadManager()
             let url = URL(string: url)!
             let data = try await downloadManager.downloadBook(url: url)
-            let fileURL = URL.documentsDirectory.appending(path: "\(id).txt")
+            let fileURL = URL.documentsDirectory.appending(path: "\(id).epub")
             try FileManager.default.save(data: data, url: fileURL)
             return data
         },
         loadBook: { id in
-            let fileURL = URL.documentsDirectory.appending(path: "\(id).txt")
+            let fileURL = URL.documentsDirectory.appending(path: "\(id).epub")
             let data = try Data(contentsOf: fileURL)
             return data
         }

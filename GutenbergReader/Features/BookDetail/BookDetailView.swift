@@ -7,6 +7,7 @@
 
 import SwiftUI
 import ComposableArchitecture
+import FolioReaderKit
 
 struct BookDetailView: View {
     let store: StoreOf<BookDetailFeature>
@@ -38,7 +39,12 @@ struct DetailBottomView: View {
     let viewStore: ViewStore<BookDetailFeature.State, BookDetailFeature.Action>
     var body: some View {
         HStack(alignment:.center) {
-            NavigationLink(state: Path.State.bookReader(BookReaderFeature.State(bookContent: viewStore.bookContent ?? Data()))) {
+            NavigationLink {
+                ReadingBookView(bookID: String(viewStore.book.id), folioReader: FolioReader())
+                    .edgesIgnoringSafeArea(.all)
+                    .toolbar(.hidden, for: .tabBar)
+                    .navigationBarBackButtonHidden()
+            } label: {
                 HStack {
                     Text("Read")
                     Image(systemName: "book")
@@ -51,7 +57,6 @@ struct DetailBottomView: View {
                 }
             }
             .frame(width: 150)
-            .disabled(!viewStore.isDownloadedBook)
             .padding(.leading)
             Spacer()
             Button {

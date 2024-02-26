@@ -8,6 +8,7 @@
 import Foundation
 import ComposableArchitecture
 import SwiftUI
+import FolioReaderKit
 
 @Reducer
 struct BookDetailFeature {
@@ -58,7 +59,7 @@ struct BookDetailFeature {
                 }
             case .downloadButtonTapped:
                 state.isDownloading = true
-                let url = state.book.formats.textPlainCharsetUsASCII
+                let url = state.book.formats.applicationEpubZip
                 let id = String(state.book.id)
                 return .run { send in
                     try await send(.downloadAndSaveResponse(bookDetail.downloadAndSave(url!, id)))

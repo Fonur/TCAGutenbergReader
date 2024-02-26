@@ -27,6 +27,10 @@ FolioReaderKit is an ePub reader and parser framework for iOS written in Swift.
 - [ ] Book Search
 - [ ] Add Notes to a Highlight
 
+## Who is using it?
+
+On [AppSight](https://www.appsight.io/sdk/folio-reader-kit) you can see apps that are using it in production.
+
 ## Demo
 
 **Custom Fonts :smirk:**   |  **Text Highlighting :heart_eyes:**
@@ -134,7 +138,7 @@ class StoryboardFolioReaderContrainer: FolioReaderContainer {
 Go to your storyboard file, choose or create the view controller that should present the epub reader. In the identity inspector set StoryboardFolioReaderContrainer as class.
 
 ## Documentation
-Checkout [Example](/Example) and [API Documentation](http://cocoadocs.org/docsets/FolioReaderKit)
+Checkout [Example](/Example) and [API Documentation](https://folioReader.github.io/FolioReaderKit/)
 
 You can always use the header-doc. (use **alt+click** in Xcode)
 

@@ -109,6 +109,15 @@ open class FolioReaderConfig: NSObject {
     /// Menu text color
     open var menuTextColor = UIColor(rgba: "#767676")
 
+    /// Menu text color
+    open var menuTextColorSelected = UIColor(rgba: "#6ACC50")
+    
+    // Day mode nav color
+    open var daysModeNavBackground = UIColor.white
+    
+    // Day mode nav color
+    open var nightModeNavBackground = UIColor(rgba: "#131313")
+    
     /// Night mode background color
     open var nightModeBackground = UIColor(rgba: "#131313")
 
@@ -132,6 +141,9 @@ open class FolioReaderConfig: NSObject {
     /// Enable or disable hability to user change scroll direction on menu.
     open var canChangeScrollDirection = true
 
+    /// Enable or disable hability to user change font style on menu.
+    open var canChangeFontStyle = true
+    
     /// Should hide navigation bar on user tap
     open var shouldHideNavigationOnTap = true
 
@@ -153,29 +165,29 @@ open class FolioReaderConfig: NSObject {
     // MARK: Quote image share
 
     /// Custom Quote logo
-    open var quoteCustomLogoImage       = UIImage(readerImageNamed: "icon-logo")
+    open var quoteCustomLogoImage = UIImage(readerImageNamed: "icon-logo")
 
     /// Add custom backgrounds and font colors to Quote Images
-    open var quoteCustomBackgrounds     = [QuoteImage]()
+    open var quoteCustomBackgrounds = [QuoteImage]()
 
     /// Enable or disable default Quote Image backgrounds
-    open var quotePreserveDefaultBackgrounds    = true
+    open var quotePreserveDefaultBackgrounds = true
 
     // MARK: Realm
 
     /// Realm configuration for storing highlights
-    open var realmConfiguration         = Realm.Configuration(schemaVersion: 2)
+    open var realmConfiguration = Realm.Configuration(schemaVersion: 2)
 
     // MARK: Localized strings
 
     /// Localizes Highlight title
-    open var localizedHighlightsTitle   = NSLocalizedString("Highlights", comment: "")
+    open var localizedHighlightsTitle = NSLocalizedString("Highlights", comment: "")
 
     /// Localizes Content title
-    open var localizedContentsTitle     = NSLocalizedString("Contents", comment: "")
+    open var localizedContentsTitle = NSLocalizedString("Contents", comment: "")
 
     /// Use the readers `UIMenuController` which enables the highlighting etc. The default is `true`. If set to false it's possible to modify the shared `UIMenuController` for yourself. Note: This doesn't disable the text selection in the web view.
-    open var useReaderMenuController    = true
+    open var useReaderMenuController = true
 
     /// Used to distinguish between multiple or different reader instances. The content of the user defaults (font settings etc.) depends on this identifier. The default is `nil`.
     open var identifier: String?

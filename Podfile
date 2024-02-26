@@ -5,7 +5,7 @@ use_frameworks!
 inhibit_all_warnings!
 
 def shared_pods
-  pod 'FolioReaderKit'
+  pod 'FolioReaderKit', :git => 'https://github.com/FolioReader/FolioReaderKit.git', :branch => 'master'
 end
 
 target 'GutenbergReader' do
