@@ -14,7 +14,6 @@
 		494B59442B5571B800C170F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 494B59432B5571B800C170F3 /* Assets.xcassets */; };
 		494B59472B5571B800C170F3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 494B59462B5571B800C170F3 /* Preview Assets.xcassets */; };
 		494B594F2B55728A00C170F3 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 494B594E2B55728A00C170F3 /* ComposableArchitecture */; };
-		494B595B2B55749500C170F3 /* GutenbergReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494B595A2B55749500C170F3 /* GutenbergReaderTests.swift */; };
 		494B59622B5576F100C170F3 /* BooksListFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494B59612B5576F100C170F3 /* BooksListFeatureTests.swift */; };
 		494B59642B55795400C170F3 /* BooksListFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494B59632B55795400C170F3 /* BooksListFeature.swift */; };
 		494B59672B557A8800C170F3 /* BooksListClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494B59662B557A8800C170F3 /* BooksListClient.swift */; };
@@ -93,7 +92,6 @@
 		494B59432B5571B800C170F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		494B59462B5571B800C170F3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		494B59582B55749500C170F3 /* GutenbergReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GutenbergReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		494B595A2B55749500C170F3 /* GutenbergReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GutenbergReaderTests.swift; sourceTree = "<group>"; };
 		494B59612B5576F100C170F3 /* BooksListFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListFeatureTests.swift; sourceTree = "<group>"; };
 		494B59632B55795400C170F3 /* BooksListFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListFeature.swift; sourceTree = "<group>"; };
 		494B59662B557A8800C170F3 /* BooksListClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListClient.swift; sourceTree = "<group>"; };
@@ -254,7 +252,6 @@
 			isa = PBXGroup;
 			children = (
 				4968EDAE2B56F95300FBD3D3 /* Info.plist */,
-				494B595A2B55749500C170F3 /* GutenbergReaderTests.swift */,
 				494B59612B5576F100C170F3 /* BooksListFeatureTests.swift */,
 				49D4D8712B566252003BA161 /* BookDetailFeatureTests.swift */,
 				49ED96442B5722490064736F /* BookReaderFeatureTests.swift */,
@@ -742,7 +739,6 @@
 				49F58C612B5D1515004BF7FC /* SettingsFeatureTests.swift in Sources */,
 				498B31352B61028500462F0C /* HomeFeatureTests.swift in Sources */,
 				49BC9E892B5B93E100AAAFD4 /* MockupData.swift in Sources */,
-				494B595B2B55749500C170F3 /* GutenbergReaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
