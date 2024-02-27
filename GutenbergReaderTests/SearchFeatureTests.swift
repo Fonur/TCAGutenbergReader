@@ -23,16 +23,19 @@ final class SearchFeatureTests: XCTestCase {
     func testSearchTextChange() async {
         await self.store.send(.searchTextChanged("A Christmas")) { state in
             state.text = "A Christmas"
+            state.isSearchInProgress = true
         }
-
+        await self.store.receive(\.cancelSearchTask)
         await self.store.receive(\.searchedBookList) { state in
             state.books = [self.book]
+            state.isSearchInProgress = false
         }
     }
 
     func testBookTapped() async {
         store.exhaustivity = .off
         await self.store.send(.searchTextChanged("A Christmas"))
+        await self.store.receive(\.cancelSearchTask)
         await self.store.receive(\.searchedBookList)
         await self.store.send(.selectedBook(book))
         store.assert {state in

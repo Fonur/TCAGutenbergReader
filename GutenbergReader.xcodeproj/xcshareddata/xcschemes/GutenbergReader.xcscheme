@@ -39,6 +39,11 @@
                BlueprintName = "GutenbergReaderTests"
                ReferencedContainer = "container:GutenbergReader.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "GutenbergReaderTests">
+               </Test>
+            </SkippedTests>
          </TestableReference>
          <TestableReference
             skipped = "NO"

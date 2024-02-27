@@ -227,8 +227,7 @@
 		494B593E2B5571B700C170F3 /* GutenbergReader */ = {
 			isa = PBXGroup;
 			children = (
-				49F58C5E2B5D0B06004BF7FC /* CormorantGaramond-Bold.ttf */,
-				49F58C5C2B5D0A36004BF7FC /* CormorantGaramond-Regular.ttf */,
+				498A5EEC2B8E5655001300F1 /* Fonts */,
 				4968EDAF2B56FA2B00FBD3D3 /* Info.plist */,
 				49C016282B56B65900090C31 /* Extensions */,
 				49C016232B56A7CD00090C31 /* Utils */,
@@ -287,6 +286,15 @@
 				498060CF2B5A8FAC00455CDF /* AppFeatureView.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		498A5EEC2B8E5655001300F1 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				49F58C5E2B5D0B06004BF7FC /* CormorantGaramond-Bold.ttf */,
+				49F58C5C2B5D0A36004BF7FC /* CormorantGaramond-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		498B312F2B61004700462F0C /* HomeTab */ = {
